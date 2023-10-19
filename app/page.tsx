@@ -1,10 +1,59 @@
+import {Button} from '@nextui-org/button'
 import Image from 'next/image'
+import hero from '@/public/images/JUNGLE.jpg'
+import ParallaxBg from '@/components/paralax/ParallaxBg'
 
-export default function Home() {
+export default function Page() {
   return (
-    <main>
-      <div className='font-notosans text-3xl'>amir</div>
-      <div className='text-3xl'>amir</div>
-    </main>
+    <div>
+      <ParallaxBg/>
+      <Button>Click me</Button>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+      <div>amir</div>
+    </div>
   )
 }

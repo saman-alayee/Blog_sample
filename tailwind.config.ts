@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const {nextui} = require("@nextui-org/react");
 
 const config: Config = {
   darkMode: "class",
@@ -6,6 +7,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     screens: {
@@ -22,10 +24,10 @@ const config: Config = {
         whiteBlue: "rgb(218, 255, 251)"
       },
       fontFamily: {
-        notosans: ['var(--font-noto-sans)'],
+        splinesans: ['var(--font-spline-sans)'],
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 }
 export default config

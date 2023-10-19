@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.5.4",
+    "@nextui-org/react": "^2.1.13",
+    "framer-motion": "^10.16.4",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18"

@@ -1,11 +1,11 @@
-import { Noto_Sans } from 'next/font/google'
+import { Spline_Sans } from 'next/font/google'
+import { Providers } from './providers';
+//import { ScrollShadow } from "@nextui-org/react";
 import '@/styles/globals.css'
 
-
-const noto_sans = Noto_Sans({
+const spline_sans = Spline_Sans({
   subsets: ['latin'],
-  variable: '--font-noto-sans',
-  weight: ['400','200'],
+  variable: '--font-spline-sans',
 })
 
 export default function RootLayout({
@@ -14,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${noto_sans.variable}`}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className="min-w-full min-h-screen">
+        <Providers>
+            {children}
+        </Providers>
+      </body>
     </html>
   )
 }
