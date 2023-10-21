@@ -2,6 +2,7 @@
 import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
+import NavBar from '../navbar'
 
 const ParallaxBg = () => {
     const ref = useRef(null);
@@ -15,12 +16,15 @@ const ParallaxBg = () => {
     return (
         <div
             ref={ref}
-            className='w-full h-screen overflow-hidden relative grid place-items-center'
+            className='w-full h-screen overflow-hidden relative top-0 grid place-items-center'
         >
-
+            <div className='w-full'>
+            <NavBar/>
+            </div>
+            
             <motion.h1
                 style={{y:textY}}
-                className='font-bold text-white relative font-splinesans z-20 text-7xl md:text-9xl '>
+                className='font-bold text-white relative font-splinesans z-20 text-7xl md:text-9xl -top-28 '>
                 PARALLAX
             </motion.h1>
 
