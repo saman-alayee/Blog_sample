@@ -21,10 +21,12 @@ const DesktopNav = ({ item, toggleActive, activeNavItem }: NavProps) => {
             setStick(false)
         }
     }
-    window.addEventListener('scroll', changeNavMode)
+    if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', changeNavMode)
+    }
     return (
         <div id='mediumNavBar' className={stick ? styles.fullNavDesktop : `${styles.centerNavDesktop} animate-fadeInItem`} >
-            <div className={stick?`${styles.desktopNavContent} animate-fadeInItem`:styles.desktopNavContent}>
+            <div className={stick ? `${styles.desktopNavContent} animate-fadeInItem` : styles.desktopNavContent}>
                 <div id='icon' className='flex mt-1 items-center ml-[1vw]'>
                     <Image src={'/images/logo.png'} alt='logo' width={100} height={100} />
                 </div>
