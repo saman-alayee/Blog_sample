@@ -22,7 +22,7 @@ export const ThemeSwitcher = () => {
 
     return (
         <button
-            className={`flex justify-center items-center md:w-[2vw] md:h-[5vh] w-[7vw] h-[8vh] rounded-md hover:scale-110 active:scale-100 duration-200 dark:bg-slate-200 dark:text-black bg-[#212933] text-white`}
+            className={`flex justify-center items-center md:w-7 md:h-7 w-9 h-9 rounded-md hover:scale-110 active:scale-100 duration-200 dark:bg-slate-200 dark:text-black bg-[#212933] text-white`}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
             {theme === "light" ? <BsMoon /> : <BiSun />}

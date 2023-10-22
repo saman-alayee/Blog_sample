@@ -1,7 +1,8 @@
 import { Spline_Sans } from 'next/font/google'
-import { Providers } from './providers';
+import { Providers } from '../providers/next-ui/providers';
 import '@/styles/globals.css'
-import { NextThemeProvider } from "@/components/nextTheme";
+import { NextThemeProvider } from "providers/next-theme";
+import NavBar from '@/components/navbar';
 const spline_sans = Spline_Sans({
   subsets: ['latin'],
   variable: '--font-spline-sans',
@@ -17,7 +18,12 @@ export default function RootLayout({
       <body className="min-w-full min-h-screen font-splinesans">
         <Providers>
           <NextThemeProvider>
-            <main>{children}</main>
+            <main>
+            <div className='w-full relative top-8 z-40'>
+            <NavBar/>
+            </div>
+              {children}
+            </main>
           </NextThemeProvider>
         </Providers>
       </body>

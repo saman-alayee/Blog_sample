@@ -1,17 +1,16 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import styles from './navbar.module.css'
+import styles from './mobileNav.module.css'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BiSearchAlt } from 'react-icons/bi'
-import { ThemeSwitcher } from '../themeSwitch'
-type NavMobileProps = {
-    item: string[],
-    toggleActive: (arg: string) => void,
-    activeNavItem: string,
-}
+import { ThemeSwitcher } from '@/components/themeSwitch'
+import { MobileSearchBtn } from '@/components/searchBtn'
+import NavItem from '../NavItem'
+import BlogLogo from '../BlogLogo'
 
-const MobileNav = ({ item, toggleActive, activeNavItem }: NavMobileProps) => {
+
+const MobileNav = () => {
     const [mobileMenuToggle, setMobileMenuToggle] = useState<boolean>(false)
     const [searchBar, setSearchBar] = useState<boolean>(false)
 
@@ -41,11 +40,9 @@ const MobileNav = ({ item, toggleActive, activeNavItem }: NavMobileProps) => {
     return (
         <>
             <div id='mobileNavBar' className={styles.mobileNav}>
-                <div id='icon' className='md:hiden flex justify-center items-center ml-[1vw]'>
-                    <Image src={'/images/logo.png'} alt='logo' width={100} height={100} />
-                </div>
+                <BlogLogo />
                 <div className='flex'>
-                    <button onClick={() => openSearch()} className={styles.searchBtn}><BiSearchAlt /></button>
+                    <MobileSearchBtn openSearch={openSearch} />
                     <ThemeSwitcher />
                 </div>
                 <div>
@@ -62,11 +59,7 @@ const MobileNav = ({ item, toggleActive, activeNavItem }: NavMobileProps) => {
                         exit='exit'
                     >
                         <div onClick={() => openMobileMenu()} className={styles.inMenuBtn}><AiOutlineClose /> </div>
-                        <ul className='flex flex-col justify-center items-center mt-[20vh] text-white'>
-                            {item?.map(item =>
-                                <li key={item} onClick={() => toggleActive(item)} className={activeNavItem === item ? "text-blue-500 font-bold transition-all duration-300 p-3" : "hover:text-blue-500 p-4"}>{item}</li>
-                            )}
-                        </ul>
+                        <NavItem />
                     </motion.div>
                 )}
 
@@ -78,11 +71,11 @@ const MobileNav = ({ item, toggleActive, activeNavItem }: NavMobileProps) => {
                         animate='animate'
                         exit='exit'
                     >
-                    <div className='flex items-center justify-center mt-24'><input placeholder='search' autoFocus className='outline-none border focus:border-slate-800 w-48 h-10 rounded-md p-4'/></div>
-                    <div className='flex justify-center items-center m-3 p-3 space-x-4'>
-                    <button onClick={()=>openSearch()} className='text-white'><AiOutlineClose /> </button>
-                    <button className='text-white'><BiSearchAlt /></button>
-                    </div>
+                        <div className='flex items-center justify-center mt-24'><input placeholder='search' autoFocus className='outline-none border focus:border-slate-800 w-48 h-10 rounded-md p-4' /></div>
+                        <div className='flex justify-center items-center m-3 p-3 space-x-4'>
+                            <button onClick={() => openSearch()} className='text-white'><AiOutlineClose /> </button>
+                            <button className='text-white'><BiSearchAlt /></button>
+                        </div>
                     </motion.div>
                 )}
 
