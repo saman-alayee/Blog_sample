@@ -1,0 +1,7 @@
+.searchBtn {
+  @apply flex md:mr-0 mr-2 justify-center items-center md:w-7 md:h-7 w-9 h-9 rounded-md bg-[#212933] text-white hover:scale-110 active:scale-100 duration-200;
+}
+
+:global(.dark) .searchBtn {
+  @apply bg-slate-200 text-black;
+}

@@ -1,27 +1,20 @@
 'use client'
 import React, { useState } from 'react'
-import DesktopNav from './DesktopNav'
-import MobileNav from './MobileNav'
+import DesktopNav from './desktopNav/DesktopNav'
+import MobileNav from './mobileNav/MobileNav'
 
 const NavBar = () => {
-  const [activeItem, setActiveItem] = useState<string>('Home')
-  const [searchBar, setSearchBar] = useState<boolean>(false)
-
-  const activeNav: (arg: string) => void = (arg) => {
-    setActiveItem(arg)
-  }
-  const openSearch: () => void = () => {
-    setSearchBar(!searchBar)
-  }
 
 
-  const navItem: string[] = ['Home', 'Features', 'customers', 'Integrations']
+
+
+
 
 
   return (
     <nav className='w-full absolute'>
-      <DesktopNav item={navItem} toggleActive={activeNav} activeNavItem={activeItem}/>
-      <MobileNav item={navItem} toggleActive={activeNav} activeNavItem={activeItem}/>
+      <DesktopNav />
+      <MobileNav />
     </nav>
 
   )
