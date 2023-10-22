@@ -1,0 +1,65 @@
+.centerNavDesktop {
+  @apply hidden md:block md:relative z-40 -top-20 max-w-6xl h-16 mx-auto rounded-lg bg-white/70 transition-all duration-700;
+}
+:global(.dark) .centerNavDesktop {
+    @apply bg-black/80 transition-all duration-700;
+  }
+.fullNavDesktop {
+  @apply hidden animate-fadeIn md:block md:fixed z-40 top-0 w-full h-16 bg-white/80 shadow-md shadow-gray-200 transition-all duration-700;
+}
+:global(.dark) .fullNavDesktop {
+    @apply bg-black/80 shadow-slate-900 transition-all duration-700;
+  }
+
+.desktopNavContent{
+    @apply flex justify-between items-center
+}
+.searchBar{
+  @apply outline-none border focus:border-gray-800 w-48 px-2 text-sm rounded-lg transition-all duration-300
+}
+
+/* style for mobile*/
+.mobileNav {
+  @apply md:hidden fixed z-30 flex justify-between px-6 items-center bg-white/60 shadow-sm shadow-gray-200  top-0 w-full;
+}
+
+:global(.dark) .mobileCloseNav{
+  @apply bg-black/60 shadow-slate-900 transition-all duration-700
+}
+
+
+.mobileMenuBtn{
+  @apply  flex justify-center items-center rounded-md w-[7vw] h-[8vh] z-40 bg-[#212933] text-white
+}
+
+:global(.dark) .mobileMenuBtn{
+  @apply bg-slate-200 text-black
+}
+
+.inMenuBtn{
+  @apply absolute  top-[1.12rem] right-6  flex justify-center items-center rounded-md w-[7vw] h-[8vh] z-40 bg-[#212933] text-white
+
+}
+
+:global(.dark) .inMenuBtn{
+  @apply bg-slate-200 text-black
+}
+
+.mobileMenu{
+  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/60 transition-colors duration-500
+}
+
+.seachPage{
+  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/90 transition-colors duration-500
+}
+
+
+/* class for mobile and desktop*/
+
+.searchBtn{
+  @apply flex md:mr-0 mr-8 justify-center items-center md:w-[2vw] md:h-[5vh] w-[7vw] h-[8vh] rounded-md bg-[#212933] text-white hover:scale-110 active:scale-100 duration-200
+}
+
+:global(.dark) .searchBtn{
+  @apply bg-slate-200 text-black
+}
