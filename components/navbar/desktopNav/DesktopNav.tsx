@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react'
-import { ThemeSwitcher } from '@/components/themeSwitch'
 import Image from 'next/image'
 import styles from './desktopNav.module.css'
+import { ThemeSwitcher } from '@/components/themeSwitch'
 import { DesktopSearchBtn } from '@/components/searchBtn'
 import NavItem from '../NavItem'
 import BlogLogo from '../BlogLogo'
@@ -21,10 +21,10 @@ const DesktopNav = () => {
         window.addEventListener('scroll', changeNavMode)
     }
     return (
-        <div id='mediumNavBar' className={stick ? styles.fullNavDesktop : `${styles.centerNavDesktop} animate-fadeInItem`} >
+        <div className={stick ? styles.fullNav : styles.centerNav}>
             <div className={stick ? `${styles.desktopNavContent} animate-fadeInItem` : styles.desktopNavContent}>
                 <BlogLogo />
-                <div id='navbar' className='flex p-3 space-x-3 '>
+                <div id='navbar' className='flex p-3 mr-4 space-x-3 '>
                     <NavItem />
                     <ThemeSwitcher />
                     <DesktopSearchBtn />
@@ -36,3 +36,13 @@ const DesktopNav = () => {
 }
 
 export default DesktopNav
+
+
+
+{
+    /*
+
+    
+    
+    */
+}

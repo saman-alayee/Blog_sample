@@ -11,7 +11,7 @@ const NavItem = () => {
     }
     const navItem: navItem[] = [
         { navItem: 'Home', link: "/" },
-        { navItem: 'ContactUs', link: "/ContactUs" },
+        { navItem: 'Contact-Us', link: "/ContactUs" },
         { navItem: "Blog", link: "/Blog" }
     ]
 

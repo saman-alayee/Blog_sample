@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
-import NavBar from '../navbar'
+import Image from 'next/image'
 
 const ParallaxBg = () => {
     const ref = useRef(null);
@@ -20,7 +20,10 @@ const ParallaxBg = () => {
         >
             <motion.h1
                 style={{ y: textY }}
-                className='flex justify-center items-center font-bold text-white relative font-splinesans z-20 text-7xl md:text-9xl '>
+                initial={{ y: -60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: 'spring', duration: 2, delay: 1 }}
+                className='flex justify-center items-center font-bold text-white dark:text-black relative font-splinesans z-20 text-7xl md:text-9xl '>
                 BLOG
             </motion.h1>
 

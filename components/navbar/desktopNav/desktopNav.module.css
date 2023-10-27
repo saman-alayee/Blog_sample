@@ -1,14 +1,14 @@
-.centerNavDesktop {
-  @apply hidden md:block max-w-6xl h-16 mx-auto rounded-lg bg-white/70 transition-all duration-700;
+.centerNav {
+  @apply hidden md:block origin-center max-w-6xl h-16 mx-auto rounded-lg bg-white/90 transition-all duration-700;
 }
-:global(.dark) .centerNavDesktop {
-  @apply bg-black/80 transition-all duration-700;
+:global(.dark) .centerNav {
+  @apply bg-zinc-950 transition-all duration-700 border border-zinc-800;
 }
-.fullNavDesktop {
-  @apply hidden md:block md:fixed animate-fadeIn top-0 w-full h-16 bg-white/80 shadow-md shadow-gray-400 transition-all duration-700;
+.fullNav {
+  @apply hidden md:block md:fixed animate-fadeIn top-0 w-full h-16 border-b bg-white/90 mx-auto transition-all duration-300;
 }
-:global(.dark) .fullNavDesktop {
-  @apply bg-black/80 shadow-slate-900 transition-all duration-700;
+:global(.dark) .fullNav {
+  @apply bg-black/80 border-b-zinc-800 transition-all duration-700;
 }
 
 .desktopNavContent {
