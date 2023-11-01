@@ -1,8 +1,7 @@
 'use client'
 import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
-import styles from './ParallaxBg.module.css'
-import Image from 'next/image'
+import styles from './ParallaxHero.module.css'
 
 const ParallaxBg = () => {
     const ref = useRef(null);
@@ -20,16 +19,13 @@ const ParallaxBg = () => {
         >
             <motion.h1
                 style={{ y: textY }}
-                initial={{ y: -60, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ type: 'spring', duration: 2, delay: 1 }}
                 className='flex justify-center items-center font-bold text-white dark:text-black relative font-splinesans z-20 text-7xl md:text-9xl '>
                 BLOG
             </motion.h1>
 
             <motion.div
                 id={styles.para}
-                className='absolute inset-0 z-0'
+                className='absolute inset-0 z-0 grayscale-[50%]'
                 style={{ y: bgY }}>
             </motion.div>
         </div>
@@ -37,3 +33,11 @@ const ParallaxBg = () => {
 }
 
 export default ParallaxBg
+
+
+{/*
+                initial={{ y: -60, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ type: 'spring', duration: 2 }}
+
+*/}
