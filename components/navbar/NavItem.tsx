@@ -1,14 +1,11 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
 import styles from './navBar.module.css'
+import { useChangeActive } from 'store/NavItemsZustand'
 
 const NavItem = () => {
-    const [activeNavItem, setActiveNavItem] = useState<string>('Home')
-
-    const toggleActive: (arg: string) => void = (arg) => {
-        setActiveNavItem(arg)
-    }
+    
+    const { activeItem, change } = useChangeActive();
     const navItem: navItem[] = [
         { navItem: 'Home', link: "/" },
         { navItem: 'Contact-Us', link: "/ContactUs" },
@@ -18,8 +15,9 @@ const NavItem = () => {
     return (
         <ul className={styles.navContainer}>
             {navItem.map(item =>
-                <li key={item.navItem} onClick={() => toggleActive(item.navItem)} className={activeNavItem === item.navItem ? styles.activeNavItem : styles.navItem}>
+                <li key={item.navItem} onClick={() => change(item.navItem)} className={activeItem === item.navItem ? styles.activeNavItem : `group ${styles.navItem}`}>
                     <Link href={item.link}>{item.navItem}</Link>
+                    <div className='group-hover:border-b border-b-black dark:border-b-white mx-2 mt-1'></div>
                 </li>
             )}
         </ul>
@@ -27,6 +25,5 @@ const NavItem = () => {
 }
 
 export default NavItem
-
 
 

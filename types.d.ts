@@ -4,3 +4,8 @@ type navItem={
   }
 
   type voidFunc=()=>void
+
+  type ChangeActive = {
+    activeItem: string,
+    change: (arg:string) => void,
+}

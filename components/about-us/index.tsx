@@ -3,6 +3,7 @@ import Parallax from './paralax/Paralax'
 import Features from './Features'
 
 const AboutUs = () => {
+
   return (
     <div className='w-full h-[130vh]  overflow-hidden relative -top-24 lg:-top-44 grid place-items-center'>
       <Parallax />
