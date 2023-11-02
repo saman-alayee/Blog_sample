@@ -1,6 +1,7 @@
 import ParallaxBg from '@/components/paralaxhero/ParallaxBg'
 import AboutUs from '@/components/about-us';
 import Products from '@/components/product';
+import Footer from '@/components/footer';
 export default function Page() {
 
   return (
@@ -8,51 +9,7 @@ export default function Page() {
       <ParallaxBg/>
       <AboutUs/>
       <Products/>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
-      <div>amir</div>
+      <Footer/>
     </div>
   )
 }

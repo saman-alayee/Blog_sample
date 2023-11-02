@@ -14,16 +14,17 @@ const ProductItem = () => {
     const view = useInView(ref, { amount: 0.2 })
     const parentVariant = {
         hidden: {
-            opacity:0,
+            opacity: 0,
         },
         show: {
-            opacity:1,
-            transition:{
-                duration:0.75,
-                when:"beforeChildren"
+            opacity: 1,
+            transition: {
+                duration: 0.75,
+                when: "beforeChildren"
             }
         }
     }
+    const card: string[] = ["FrontEnd", "BackEnd"]
     return (
         <motion.div className={styles.featuresContainer}
             variants={parentVariant}
@@ -32,20 +33,48 @@ const ProductItem = () => {
             style={{ y: boxY }}
             ref={ref}
         >
+            <div className='flex md:flex-row flex-col items-center  md:space-x-4 md:space-y-0 space-y-4'>
+                {
+                    card.map(item =>
+                        <div className='md:p-8 p-4 rounded-lg md:w-[35vw] md:h-[70vh] w-[70vw] h-[40vh] dark:bg-black/50 bg-white/50 dark:text-white text-black' key={item}>
+                            <div className='flex flex-col justify-center items-center md:space-y-4 space-y-1'>
+                                <Image alt='' src={'/images/HERO.jpg'} width={400} height={400} className='w-[60vw] h-[20vh] md:h-auto md:w-auto rounded-lg' />
+                                <h1 className='md:text-5xl text-2xl'>{item}</h1>
+                                <motion.button
+                                    className='md:p-4 p-2 text-xs md:text-lg rounded-lg dark:bg-black/90 bg-white/90 dark:text-white text-black hover:text-white hover:bg-violet-600 active:bg-violet-700 dark:hover:bg-violet-600 dark:active:bg-violet-700  transition-all duration-400'
+                                >SHOW MORE</motion.button>
+                            </div>
+                        </div>
 
-            <motion.div className={styles.textArea} variants={parentVariant} animate="show">
-                <h1 className={styles.textAreaHeader}>The purpose of establishing this site</h1>
-                <div className={styles.textAreaBody}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repudiandae illum error. Aperiam explicabo sint eaque vitae similique doloremque qui. Amet consequatur voluptates modi, sunt at officiis hic impedit nulla.</div>
-            </motion.div>
-
-            <motion.div className={styles.featuresImage} variants={parentVariant} animate="show">
-                <Image src={'/images/HERO.jpg'} alt='herr' width={400} height={400} className='h-[100%] mx-auto rounded-lg' />
-            </motion.div>
+                    )
+                }
+            </div>
 
 
-
-        </motion.div>
+        </motion.div >
     )
 }
 
 export default ProductItem;
+
+
+/*
+
+                            <div className='flex flex-col justify-center items-center md:space-y-8 space-y-4'>
+                                <Image alt='' src={'/images/HERO.jpg'} width={400} height={400} className='w-[60vw] h-[20vh] md:h-auto md:w-auto rounded-lg' />
+                                <h1 className='md:text-7xl text-3xl'>{item}</h1>
+                                <motion.button
+                                    className='md:p-4 p-2 text-sm md:text-xl rounded-lg dark:bg-black/90 bg-white/90 dark:text-white text-black hover:text-white hover:bg-violet-600 active:bg-violet-700 dark:hover:bg-violet-600 dark:active:bg-violet-700  transition-all duration-400'
+                                >SHOW MORE</motion.button>
+                            </div>
+
+
+
+
+                                <div className='flex flex-col justify-center items-center md:space-y-8 space-y-4'>
+                                <Image alt='' src={'/images/HERO.jpg'} width={400} height={400} className='w-[60vw] h-[20vh] md:h-auto md:w-auto rounded-lg' />
+                                <h1 className='md:text-7xl text-3xl'>{item}</h1>
+                                <motion.button
+                                    className='md:p-4 p-2 text-sm md:text-xl rounded-lg dark:bg-black/90 bg-white/90 dark:text-white text-black hover:text-white hover:bg-violet-600 active:bg-violet-700 dark:hover:bg-violet-600 dark:active:bg-violet-700  transition-all duration-400'
+                                >SHOW MORE</motion.button>
+*/
