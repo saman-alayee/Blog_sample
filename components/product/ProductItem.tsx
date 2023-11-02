@@ -1,9 +1,10 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform, useInView } from 'framer-motion'
-import styles from './Features.module.css'
 import Image from 'next/image'
-const Features = () => {
+import styles from './Product.module.css'
+
+const ProductItem = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -47,4 +48,4 @@ const Features = () => {
     )
 }
 
-export default Features
+export default ProductItem;
