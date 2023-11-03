@@ -20,9 +20,6 @@ export default function RootLayout({
         <Providers>
           <NextThemeProvider>
             <main>
-              <div className='w-full relative top-8 z-40'>
-                <NavBar />
-              </div>
               {children}
             </main>
           </NextThemeProvider>

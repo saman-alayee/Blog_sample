@@ -15,11 +15,11 @@ const ParallaxProduct = () => {
     return (
         <div
             ref={ref}
-            className='w-full min-h-screen relative top-0'
+            className='w-full md:h-[130vh] h-[140vh] relative inset-0'
         >
             <motion.h1
                 style={{ y: textY }}
-                className='flex justify-center items-center font-bold text-white dark:text-black relative top-16  font-splinesans z-20 text-3xl md:text-5xl '>
+                className='flex justify-center items-center font-bold text-white dark:text-black relative top-[7vh]  font-splinesans z-20 text-3xl md:text-5xl '>
                 BLOG-POST
             </motion.h1>
 

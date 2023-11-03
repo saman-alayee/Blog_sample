@@ -4,9 +4,9 @@ import ParallaxProduct from './paralax/ParalaxProduct'
 
 const Products = () => {
   return (
-    <div className='w-full h-[130vh]  overflow-hidden relative -top-48 lg:-top-[18.5rem] grid place-items-center'>
+    <div className='w-full md:h-[130vh] h-[140vh]  overflow-hidden relative grid place-items-center'>
       <ParallaxProduct />
-      <div className='absolute z-20 top-56 lg:top-64'>
+      <div className='absolute z-20'>
         <ProductItem />
       </div>
     </div>

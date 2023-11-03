@@ -1,8 +1,44 @@
-.featuresContainer{
-    @apply flex flex-col justify-center -mt-6
-    md:flex-row md:items-center md:w-[80vw] md:h-[80vh] md:p-4 md:space-x-8 md:mt-0
-     text-black shadow-2xl shadow-gray-200 rounded-lg
+.ProductContainer {
+  @apply flex flex-col justify-center mt-[9vh]
+    md:flex-row md:items-center p-8
+     text-black shadow-2xl shadow-gray-200 rounded-lg transition-all duration-400;
 }
-:global(.dark) .featuresContainer {
-    @apply text-white shadow-black/30  transition-all duration-700;
-  }
+:global(.dark) .ProductContainer {
+  @apply text-white shadow-black/30  transition-all duration-400;
+}
+
+.cardContainer {
+  @apply flex md:flex-row flex-col justify-center items-center mt-[10vh]  md:space-x-12 md:space-y-0 space-y-4;
+}
+
+.cardBody {
+  @apply rounded-lg   bg-white/50 text-black;
+}
+:global(.dark) .cardBody {
+  @apply bg-black/50 text-white;
+}
+
+.cardElements {
+  @apply flex flex-col justify-center items-center md:space-y-8 space-y-1 md:p-8 p-4;
+}
+
+.cardBtn {
+  @apply text-xs md:text-lg md:p-4 p-3 rounded-lg  bg-white/90 text-black hover:text-white
+   hover:bg-violet-600 active:bg-violet-700 transition-all duration-400; 
+       
+}
+
+:global(.dark) .cardBtn {
+  @apply bg-black/90 text-white hover:bg-violet-600 active:bg-violet-700;
+}
+
+.cardTitle {
+  @apply md:text-5xl text-2xl;
+}
+.cardImg {
+  @apply w-[70vw] h-[37vh] md:w-auto md:h-auto p-4 rounded-lg;
+}
+
+/*
+  md:w-[35vw] md:h-[70vh] w-[70vw] h-[40vh]
+  */

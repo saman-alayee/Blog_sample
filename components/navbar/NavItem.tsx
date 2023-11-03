@@ -4,7 +4,7 @@ import styles from './navBar.module.css'
 import { useChangeActive } from 'store/NavItemsZustand'
 
 const NavItem = () => {
-    
+
     const { activeItem, change } = useChangeActive();
     const navItem: navItem[] = [
         { navItem: 'Home', link: "/" },
@@ -15,10 +15,12 @@ const NavItem = () => {
     return (
         <ul className={styles.navContainer}>
             {navItem.map(item =>
-                <li key={item.navItem} onClick={() => change(item.navItem)} className={activeItem === item.navItem ? styles.activeNavItem : `group ${styles.navItem}`}>
-                    <Link href={item.link}>{item.navItem}</Link>
-                    <div className='group-hover:border-b border-b-black dark:border-b-white mx-2 mt-1'></div>
-                </li>
+                <div key={item.navItem} onClick={() => change(item.navItem)} className='mx-auto'>
+                    <li className={activeItem === item.navItem ? styles.activeNavItem : `group ${styles.navItem}`}>
+                        <Link href={item.link}>{item.navItem}</Link>
+                        <div className='group-hover:border-b border-b-black dark:border-b-white mx-2 mt-1'></div>
+                    </li>
+                </div>
             )}
         </ul>
     )

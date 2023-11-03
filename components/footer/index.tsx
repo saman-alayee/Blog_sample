@@ -4,7 +4,7 @@ import NavItem from '../navbar/NavItem'
 import SocialIcons from './SocialIcons'
 const Footer = () => {
   return (
-    <div className='w-full md:h-32 flex flex-col md:flex-row justify-center md:justify-around items-center -mt-44 md:-mt-[18.5rem] mb-16 space-y-6 md:space-y-0 md:mb-0 md:p-4'>
+    <div className='w-full flex flex-col justify-center md:items-center md:flex-row  md:justify-around space-y-6 md:space-y-0 p-8 mt-8 md:mt-0'>
       <BlogLogo />
       <NavItem />
       <SocialIcons />
@@ -16,3 +16,6 @@ const Footer = () => {
 export default Footer
 
 
+/*
+md:mb-0 md:p-4 -mt-44 md:-mt-[18.5rem] mb-16
+*/

@@ -1,6 +1,6 @@
 .featuresContainer{
-    @apply flex flex-col justify-center mx-6 py-8 px-4 space-y-8 
-    md:flex-row md:justify-between md:items-center md:w-[80vw] md:h-[80vh] md:mt-6
+    @apply flex flex-col justify-center mx-6 py-8 px-4 space-y-8 mt-[13vh]
+    md:flex-row md:justify-between md:items-center md:w-[80vw] md:h-[80vh]
      bg-white/40 text-black shadow-2xl shadow-gray-200 rounded-lg
 }
 :global(.dark) .featuresContainer {
