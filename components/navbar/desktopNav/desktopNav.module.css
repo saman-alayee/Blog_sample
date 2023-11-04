@@ -4,8 +4,9 @@
 :global(.dark) .centerNavDesktop {
   @apply bg-zinc-950 transition-all duration-700 border border-zinc-800 shadow-2xl;
 }
+
 .fullNavDesktop {
-  @apply hidden md:block md:fixed origin-center top-0 w-full h-16 border-b bg-white/90 mx-auto animate-fadeIn transition-all duration-300;
+  @apply hidden md:block md:fixed inset-0 mx-auto origin-center w-[16rem] h-16 border-b bg-white/90;
 }
 :global(.dark) .fullNavDesktop {
   @apply bg-black/80 border-b-zinc-800 transition-all duration-700;

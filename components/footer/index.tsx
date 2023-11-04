@@ -14,8 +14,3 @@ const Footer = () => {
 
 
 export default Footer
-
-
-/*
-md:mb-0 md:p-4 -mt-44 md:-mt-[18.5rem] mb-16
-*/
