@@ -1,0 +1,27 @@
+.formContainer {
+    @apply bg-white rounded-lg shadow-2xl border p-4 flex flex-col md:flex-row
+}
+:global(.dark) .formContainer {
+    @apply text-white bg-black/90 transition-all duration-700;
+  }
+.title {
+    @apply text-center text-2xl font-bold 
+}
+
+.inputField {
+    @apply flex flex-col m-4
+    
+}
+
+.label {
+   @apply text-lg m-2
+}
+
+.formInput {
+    @apply w-[30vw] text-lg p-2 rounded-lg border border-[#ccc] 
+}
+
+.formBtn {
+    @apply w-[93%] py-2 mt-3 bg-blue-400 text-white mx-auto text-lg border-none rounded-xl cursor-pointer hover:bg-blue-500
+}
+

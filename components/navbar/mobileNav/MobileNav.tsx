@@ -1,4 +1,4 @@
-import Image from 'next/image'
+"use client"
 import React, { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import styles from './mobileNav.module.css'
