@@ -1,7 +1,5 @@
 {
-    "mongo_URI":"mongodb+srv://DB:4WNNfkN7fS4kgLpG@cluster0.aeeb0b6.mongodb.net/",
+    "mongo_URI":"mongodb+srv://amir81:TwmrYm28s1KpssF6@blog.lwkjsgy.mongodb.net/?retryWrites=true&w=majority",    
     "jwtPrivateKey": "SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
     "baseUrl" : "http://localhost:5000"
-
-
 }
