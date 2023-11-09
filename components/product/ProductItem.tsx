@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform, useInView } from 'framer-motion'
 import Image from 'next/image'
 import styles from './Product.module.css'
+import Link from 'next/link'
 
 const ProductItem = () => {
     const ref = useRef(null);
@@ -24,7 +25,7 @@ const ProductItem = () => {
             }
         }
     }
-    const card: string[] = ["FrontEnd", "BackEnd"]
+    const card: { title: string, href: string }[] = [{ title: "FrontEnd", href: '/frontEndSection' }, { title: "BackEnd", href:'/backEndSection'}]
     return (
         <motion.div className={styles.ProductContainer}
             variants={parentVariant}
@@ -36,13 +37,16 @@ const ProductItem = () => {
             <div className={styles.cardContainer}>
                 {
                     card.map(item =>
-                        <div className={styles.cardBody} key={item}>
+                        <div className={styles.cardBody} key={item.href}>
                             <div className={styles.cardElements}>
                                 <Image alt='' src={'/images/HERO.jpg'} width={400} height={400} className={styles.cardImg} />
-                                <h1 className={styles.cardTitle}>{item}</h1>
-                                <motion.button
-                                    className={styles.cardBtn}
-                                >SHOW MORE</motion.button>
+                                <h1 className={styles.cardTitle}>{item.title}</h1>
+
+                                <Link href={`/Blog/${item.href}`}>
+                                    <motion.button
+                                        className={styles.cardBtn}>
+                                        SHOW MORE</motion.button>
+                                </Link>
                             </div>
                         </div>
 

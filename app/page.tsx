@@ -17,10 +17,6 @@ export default function Page() {
       <div className='bg-transparent w-full h-[130vh]'>
         <Products />
       </div>
-      <footer className='w-full md:h-56 bg-white dark:bg-black flex flex-col justify-center md:items-center md:flex-row'>
-        <Footer />
-      </footer>
-
     </div>
   )
 }

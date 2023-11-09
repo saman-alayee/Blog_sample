@@ -18,8 +18,7 @@ const NavItem = () => {
             {navItem.map(item =>
                 <div key={item.navItem} className='mx-auto'>
                     <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`}>
-                        <Link href={item.link}>{item.navItem}</Link>
-                        <div className='group-hover:border-b border-b-black dark:border-b-white mx-2 mt-1'></div>
+                        <Link href={item.link} className='hover:text-blue-500'>{item.navItem}</Link>
                     </li>
                 </div>
             )}

@@ -24,7 +24,7 @@
 
 .cardBtn {
   @apply text-xs md:text-lg md:p-4 p-3 rounded-lg  bg-white/90 text-black hover:text-white
-   hover:bg-violet-600 active:bg-violet-700 transition-all duration-400; 
+   hover:bg-blue-600 active:bg-blue-700 transition-all duration-400; 
        
 }
 

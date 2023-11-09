@@ -16,9 +16,9 @@ export default function PagesLayout({
 }) {
   return (
     <main>
-      <div>
+      <div className='fixed top-0 z-40'>
         <DesktopFullNav />
-        <MobileNav/>
+        <MobileNav />
       </div>
       <div className='mt-16'>
         {children}

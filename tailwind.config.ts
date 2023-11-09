@@ -16,30 +16,6 @@ const config: Config = {
       xl: "1440px",
     },
     extend: {
-      animation: {
-        fadeIn: 'fadeIn 0.5s ease-in-out',
-        fadeInItem: "fadeInItem 1s ease-in-out",
-        fadeOpenSearchBar: "fadeOpenSearchBar 0.25s ease-in-out",
-        CloseSearchBar: "CloseSearchBar 0.25s ease-in-out"
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { height: '0' },
-          '100%': { height: '4rem' },
-        },
-        fadeInItem: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '100' },
-        },
-        fadeOpenSearchBar: {
-          '0%': { width: '0' },
-          '100%': { width: '12rem' },
-        },
-        CloseSearchBar: {
-          '0%': { width: 'full' },
-          '100%': { width: '0' },
-        }
-      },
       colors: {
         darkestBlue: "rgb(4, 54, 74)",
         darkBlue: "rgb(23, 107, 135)",
