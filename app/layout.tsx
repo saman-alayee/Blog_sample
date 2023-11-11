@@ -1,3 +1,4 @@
+"use client"
 import { Spline_Sans } from 'next/font/google'
 import { Providers } from '../providers/next-ui/providers';
 import '@/styles/globals.css'

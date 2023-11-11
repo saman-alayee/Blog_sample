@@ -40,13 +40,16 @@ const MobileNav = () => {
     return (
         <>
             <div id='mobileNavBar' className={styles.mobileNav}>
-                <BlogLogo />
-                <div className='flex'>
+                <div className='w-1/3 flex justify-start'>
+                    <BlogLogo />
+                </div>
+
+                <div className='w-1/3 flex justify-center'>
                     <MobileSearchBtn openSearch={openSearch} />
                     <ThemeSwitcher />
                 </div>
-                <div>
-                    <button onClick={() => openMobileMenu()} className={styles.mobileMenuBtn}><AiOutlineMenu /></button>
+                <div className='w-1/3 flex justify-end'>
+                    {mobileMenuToggle === false && <button onClick={() => openMobileMenu()} className={styles.mobileMenuBtn}><AiOutlineMenu /></button>}
                 </div>
             </div>
             <AnimatePresence>

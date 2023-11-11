@@ -20,12 +20,15 @@ const DesktopNav = () => {
     if (typeof window !== 'undefined') {
         window.addEventListener('scroll', changeNavMode)
     }
+
+
     return (
-        <>
+        <div className='hidden md:block'>
             {stick ? <DesktopFullNav /> : <DesktopCenterNav />}
-        </>
+        </div>
     )
 }
+
 export default DesktopNav;
 
 

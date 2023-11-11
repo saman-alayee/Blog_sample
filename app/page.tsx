@@ -7,7 +7,7 @@ export default function Page() {
 
   return (
     <div className='mb-0'>
-      <nav className='w-full relative top-8 z-40'>
+      <nav className='w-full absolute top-8 z-40'>
         <NavBar />
       </nav>
       <ParallaxBg />

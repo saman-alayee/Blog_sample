@@ -2,7 +2,7 @@ import DesktopNav from './desktopNav/DesktopNav'
 import MobileNav from './mobileNav/MobileNav'
 const NavBar = () => {
   return (
-    <nav className='w-full absolute'>
+    <nav>
       <DesktopNav/>
       <MobileNav />
     </nav>

@@ -1,10 +1,10 @@
 /* style for mobile*/
 .mobileNav {
-  @apply md:hidden fixed z-30 flex justify-between px-6 items-center bg-white/60 shadow-sm shadow-gray-200  top-0 w-full;
+  @apply md:hidden flex justify-between items-center fixed z-30 top-0 w-full px-2 bg-white/80 shadow-sm shadow-gray-200;
 }
 
 :global(.dark) .mobileNav {
-  @apply bg-black/90 shadow-slate-900 transition-all duration-700;
+  @apply bg-black/90 shadow-slate-900;
 }
 
 .mobileMenuBtn {
@@ -12,7 +12,7 @@
 }
 
 :global(.dark) .mobileMenuBtn {
-  @apply bg-slate-200 text-black ;
+  @apply bg-slate-200 text-black;
 }
 
 .inMenuBtn {
@@ -24,11 +24,9 @@
 }
 
 .mobileMenu {
-  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/90 transition-colors duration-500;
+  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/90 text-white;
 }
 
 .seachPage {
-  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/90 transition-colors duration-500;
+  @apply md:hidden fixed inset-0 z-30 w-full h-screen origin-top bg-black/90;
 }
-
-
