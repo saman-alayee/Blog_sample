@@ -29,7 +29,7 @@
 }
 
 :global(.dark) .cardBtn {
-  @apply bg-black/90 text-white hover:bg-violet-600 active:bg-violet-700;
+  @apply bg-black/90 text-white hover:bg-blue-600 active:bg-blue-700;
 }
 
 .cardTitle {

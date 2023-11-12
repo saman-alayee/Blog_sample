@@ -3,7 +3,9 @@ import MobileNav from './mobileNav/MobileNav'
 const NavBar = () => {
   return (
     <nav>
-      <DesktopNav/>
+      <div className='hidden md:block'>
+        <DesktopNav />
+      </div>
       <MobileNav />
     </nav>
 

@@ -9,12 +9,6 @@ export default function PagesLayout({
 }) {
   return (
     <main>
-      <div className='fixed top-0 z-40'>
-        <div className='hidden md:block'>
-          <DesktopFullNav />
-        </div>
-        <MobileNav />
-      </div>
       <div className='mt-16'>
         {children}
       </div>

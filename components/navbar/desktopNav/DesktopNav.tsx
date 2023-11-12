@@ -2,10 +2,11 @@
 import React, { useState } from 'react'
 import { DesktopFullNav } from './DesktopFullNav'
 import DesktopCenterNav from './DesktopCenterNav'
+import { usePathname } from 'next/navigation'
 
 const DesktopNav = () => {
 
-
+    const pathname = usePathname()
     const [stick, setStick] = useState<boolean>(false)
     const changeNavMode: () => void = () => {
         console.log(window.scrollY);
@@ -21,12 +22,20 @@ const DesktopNav = () => {
         window.addEventListener('scroll', changeNavMode)
     }
 
+    if (pathname === '/') {
+        return (
+            <div className='hidden md:block'>
+                {stick ? <DesktopFullNav /> : <DesktopCenterNav />}
+            </div>
+        )
+    } else {
+        return (
+            <>
+                <DesktopFullNav />
+            </>
+        )
+    }
 
-    return (
-        <div className='hidden md:block'>
-            {stick ? <DesktopFullNav /> : <DesktopCenterNav />}
-        </div>
-    )
 }
 
 export default DesktopNav;

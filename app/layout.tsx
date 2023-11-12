@@ -4,6 +4,7 @@ import { Providers } from '../providers/next-ui/providers';
 import '@/styles/globals.css'
 import { NextThemeProvider } from "providers/next-theme";
 import Footer from '@/components/footer';
+import NavBar from '@/components/navbar';
 
 const spline_sans = Spline_Sans({
   subsets: ['latin'],
@@ -20,6 +21,9 @@ export default function RootLayout({
       <body className="min-w-full min-h-screen font-splinesans">
         <Providers>
           <NextThemeProvider>
+            <nav className='w-full absolute top-8 z-40'>
+              <NavBar />
+            </nav>
             <main>
               {children}
             </main>
