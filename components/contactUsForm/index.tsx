@@ -33,13 +33,13 @@ const ContactUsForm = () => {
   }
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center my-24">
-      <div className='flex flex-col md:flex-row items-center md:w-[80vw] md:h-[90vh] w-[90vw] h-[100vh] rounded-lg bg-red-500 px-8'>
-        <div className='flex items-center'>
-          <Image src={'/images/HERO.jpg'} alt='form-pic' width={500} height={500} className='rounded-lg hover:scale-110 transition-all duration-300' />
+    <div className="w-full min-h-screen flex justify-center items-center mt-20 mb-8">
+      <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-b from-slate-200 to-slate-500'>
+        <div className='flex md:justify-center items-center'>
+          <Image src={'/images/HERO.jpg'} alt='form-pic' width={500} height={500} className=' rounded-lg hover:scale-110 transition-all duration-300' />
         </div>
 
-        <div className='w-1/2 flex flex-col justify-center items-center p-4'>
+        <div className='flex flex-col justify-center items-center'>
           <h1 className={Styles.title}>Contact Us</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className={Styles.inputField}>
@@ -58,8 +58,8 @@ const ContactUsForm = () => {
 
             </div>
             <div className={Styles.inputField}>
-              <label htmlFor="password" className={Styles.label}>password</label>
-              <input type='password' id="password" placeholder='enter password' className={Styles.formInput}
+              <label htmlFor="password" className={Styles.label}>message</label>
+              <textarea id="password" placeholder='enter message' className={Styles.formInput}
                 {...register("password", { required: true })}
               />
               {errors.password && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a password</span>}

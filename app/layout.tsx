@@ -34,6 +34,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-
   )
 }
