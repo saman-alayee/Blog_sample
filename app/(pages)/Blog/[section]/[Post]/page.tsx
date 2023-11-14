@@ -1,10 +1,12 @@
 import React from 'react'
 
-const BlogPost = () => {
+const BlogPost = (props:any) => {
+  console.log(props);
+  
   const bg='bg-red-500'
   return (
-    <div className={`${bg} w-full h-screen`}>
-
+    <div>
+      {props.searchParams.Tag}
     </div>
   )
 }

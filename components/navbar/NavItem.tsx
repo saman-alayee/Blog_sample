@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from './navBar.module.css'
 import { usePathname } from 'next/navigation'
 
-const NavItem = () => {
+const NavItem = ({toggle}:{toggle:()=>void}) => {
     const pathname = usePathname()
 
 
@@ -17,7 +17,7 @@ const NavItem = () => {
         <ul className={styles.navContainer}>
             {navItem.map(item =>
                 <div key={item.navItem} className='mx-auto'>
-                    <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`}>
+                    <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`} onClick={()=>toggle()}>
                         <Link href={item.link} className='hover:text-blue-500'>{item.navItem}</Link>
                     </li>
                 </div>

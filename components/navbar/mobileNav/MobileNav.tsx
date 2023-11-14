@@ -62,7 +62,7 @@ const MobileNav = () => {
                         exit='exit'
                     >
                         <div onClick={() => openMobileMenu()} className={styles.inMenuBtn}><AiOutlineClose /> </div>
-                        <NavItem />
+                        <NavItem toggle={openMobileMenu}/>
                     </motion.div>
                 )}
 

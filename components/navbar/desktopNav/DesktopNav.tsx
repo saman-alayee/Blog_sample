@@ -9,8 +9,6 @@ const DesktopNav = () => {
     const pathname = usePathname()
     const [stick, setStick] = useState<boolean>(false)
     const changeNavMode: () => void = () => {
-        console.log(window.scrollY);
-
         if (window.scrollY > 65) {
             setStick(true)
         }

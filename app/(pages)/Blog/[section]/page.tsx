@@ -1,16 +1,18 @@
 import BlogSections from '@/components/blogSection'
-import React, { ReactNode } from 'react'
-import styles from '../Blog.module.css'
+import React from 'react'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { BiLogoCss3 } from 'react-icons/bi'
 import { BiLogoTailwindCss } from 'react-icons/bi'
 import { BiLogoJavascript } from 'react-icons/bi'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { BiLogoReact } from 'react-icons/bi'
+import { DiNodejs } from 'react-icons/di'
+import { SiExpress, SiMysql } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
 
-const FrontEnd = () => {
-  const card: blogCard[] =
+const BlogSec = ({params}:{params:{section:string}}) => {
+  
+  const Frontcard: blogCard[] =
     [
       { label: 'HTML', icon: <AiFillHtml5 className='' />, bgGradiant: 'bg-gradient-to-b from-orange-300 to-orange-700' },
       { label: 'CSS', icon: <BiLogoCss3 />, bgGradiant:'bg-gradient-to-b from-blue-300 to-blue-700' },
@@ -20,11 +22,20 @@ const FrontEnd = () => {
       { label: 'REACT', icon: <BiLogoReact />, bgGradiant:'bg-gradient-to-b from-darkBlue to-darkestBlue' },
       { label: 'NEXTJS', icon: <TbBrandNextjs />, bgGradiant:'bg-gradient-to-b from-slate-600 to-slate-900' },
     ]
+
+    const Backcard: blogCard[] =
+    [
+      { label: 'JS', icon: <BiLogoJavascript />, bgGradiant:'bg-gradient-to-b from-yellow-300 to-yellow-700' },
+      { label: 'MYSQL', icon: <SiMysql />, bgGradiant:'bg-gradient-to-b from-sky-300 to-sky-700' },
+      { label: 'NODEJS', icon: <DiNodejs />, bgGradiant:'bg-gradient-to-b from-green-300 to-green-700' },
+      { label: 'EXPRESS-JS', icon: <SiExpress />, bgGradiant:'bg-gradient-to-b from-blue-300 to-blue-700' },
+
+    ]
   return (
     <div>
-      <BlogSections card={card} />
+            <BlogSections card={params.section==='frontEnd'?Frontcard:Backcard} />
     </div>
   )
 }
 
-export default FrontEnd
+export default BlogSec;

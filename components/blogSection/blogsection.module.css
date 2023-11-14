@@ -1,5 +1,5 @@
 .cardsContainer {
-  @apply flex lg:flex-row flex-col items-center justify-center w-full min-h-screen my-16;
+  @apply flex lg:flex-row flex-col items-center justify-center w-full min-h-screen mt-20 mb-16;
 }
 .cardsBody {
   @apply flex lg:flex-col flex-row lg:justify-center items-center relative lg:w-36 lg:h-[70vh] w-[80vw] h-24 transition-all duration-700;
