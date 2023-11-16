@@ -4,11 +4,11 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import styles from './mobileNav.module.css'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BiSearchAlt } from 'react-icons/bi'
-import { ThemeSwitcher } from '@/components/themeSwitch'
-import { MobileSearchBtn } from '@/components/searchBtn'
-import NavItem from '../NavItem'
-import BlogLogo from '../BlogLogo'
-import Login from '@/components/login'
+import { ThemeSwitcher } from '@/components/navbar/themeSwitch'
+import { MobileSearchBtn } from '@/components/navbar/searchBtn'
+import NavItem from '../navItem'
+import BlogLogo from '../blogLogo'
+import LoginBtn from '@/components/login/LoginBtn'
 
 
 const MobileNav = () => {
@@ -45,9 +45,9 @@ const MobileNav = () => {
                     <BlogLogo />
                 </div>
 
-                <div className='w-1/3 flex justify-center items-center'>
+                <div className='w-1/3 flex justify-center items-center space-x-2'>
                     <MobileSearchBtn openSearch={openSearch} />
-                    <Login/>
+                    <LoginBtn/>
                 </div>
                 <div className='w-1/3 flex justify-end space-x-2'>
                     <ThemeSwitcher />

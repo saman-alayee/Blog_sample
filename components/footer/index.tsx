@@ -1,6 +1,6 @@
 "use client"
-import BlogLogo from '../navbar/BlogLogo'
-import NavItem from '../navbar/NavItem'
+import BlogLogo from '../navbar/blogLogo'
+import NavItem from '../navbar/navItem'
 import SocialIcons from './SocialIcons'
 const Footer = () => {
   return (

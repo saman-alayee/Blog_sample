@@ -12,7 +12,7 @@ const CategoryItem = () => {
         offset: ['start start', 'end start']
     })
     const boxY: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"])
-    const view = useInView(ref, { amount: 0.5 })
+    const view = useInView(ref, { amount: 0.4 })
     const parentVariant = {
         hidden: {
             opacity: 0,

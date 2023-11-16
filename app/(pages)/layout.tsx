@@ -9,7 +9,7 @@ export default function PagesLayout({
 }) {
   return (
     <main>
-      <div className='mt-16'>
+      <div className='mt-20'>
         {children}
       </div>
     </main>

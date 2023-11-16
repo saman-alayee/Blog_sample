@@ -1,9 +1,9 @@
 import styles from './desktopNav.module.css'
-import { ThemeSwitcher } from "@/components/themeSwitch"
-import BlogLogo from "../BlogLogo"
-import NavItem from "../NavItem"
-import { DesktopSearchBtn } from "@/components/searchBtn"
-import Login from '@/components/login'
+import { ThemeSwitcher } from "@/components/navbar/themeSwitch"
+import BlogLogo from "../blogLogo"
+import NavItem from "../navItem"
+import { DesktopSearchBtn } from "@/components/navbar/searchBtn"
+import LoginBtn from '@/components/login/LoginBtn'
 
 export const ContentNav = () => {
     return (
@@ -19,7 +19,7 @@ export const ContentNav = () => {
                 <input placeholder='search' className={styles.searchBar} />
             </div>
             <div>
-                <Login />
+                <LoginBtn />
             </div>
             <div>
                 <ThemeSwitcher />
