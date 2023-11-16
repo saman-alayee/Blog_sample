@@ -1,6 +1,6 @@
 /* style for mobile*/
 .mobileNav {
-  @apply md:hidden flex justify-between items-center fixed z-30 top-0 w-full px-2 bg-white/80 shadow-sm shadow-gray-200;
+  @apply md:hidden flex justify-between items-center fixed z-30 top-0 w-full px-1 bg-white/80 shadow-sm shadow-gray-200;
 }
 
 :global(.dark) .mobileNav {
@@ -8,7 +8,7 @@
 }
 
 .mobileMenuBtn {
-  @apply flex justify-center items-center rounded-md w-7 h-7 z-40 bg-[#212933] text-white;
+  @apply flex justify-center items-center rounded-md w-8 h-8 z-40 bg-[#212933] text-white;
 }
 
 :global(.dark) .mobileMenuBtn {

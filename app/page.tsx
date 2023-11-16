@@ -1,4 +1,4 @@
-import ParallaxBg from '@/components/paralaxhero/ParallaxBg'
+import ParallaxBg from '@/components/paralaxBg/ParallaxBg'
 import AboutUs from '@/components/about-us';
 import Products from '@/components/product';
 import Footer from '@/components/footer';

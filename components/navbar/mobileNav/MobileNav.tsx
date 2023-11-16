@@ -8,16 +8,17 @@ import { ThemeSwitcher } from '@/components/themeSwitch'
 import { MobileSearchBtn } from '@/components/searchBtn'
 import NavItem from '../NavItem'
 import BlogLogo from '../BlogLogo'
+import Login from '@/components/login'
 
 
 const MobileNav = () => {
     const [mobileMenuToggle, setMobileMenuToggle] = useState<boolean>(false)
     const [searchBar, setSearchBar] = useState<boolean>(false)
 
-    const openMobileMenu: () => void = () => {
+    const openMobileMenu: voidFunc = () => {
         setMobileMenuToggle(!mobileMenuToggle)
     }
-    const openSearch: () => void = () => {
+    const openSearch: voidFunc = () => {
         setSearchBar(!searchBar)
     }
     const menuVar = {
@@ -44,11 +45,12 @@ const MobileNav = () => {
                     <BlogLogo />
                 </div>
 
-                <div className='w-1/3 flex justify-center'>
+                <div className='w-1/3 flex justify-center items-center'>
                     <MobileSearchBtn openSearch={openSearch} />
-                    <ThemeSwitcher />
+                    <Login/>
                 </div>
-                <div className='w-1/3 flex justify-end'>
+                <div className='w-1/3 flex justify-end space-x-2'>
+                    <ThemeSwitcher />
                     {mobileMenuToggle === false && <button onClick={() => openMobileMenu()} className={styles.mobileMenuBtn}><AiOutlineMenu /></button>}
                 </div>
             </div>
@@ -62,7 +64,7 @@ const MobileNav = () => {
                         exit='exit'
                     >
                         <div onClick={() => openMobileMenu()} className={styles.inMenuBtn}><AiOutlineClose /> </div>
-                        <NavItem toggle={openMobileMenu}/>
+                        <NavItem toggle={openMobileMenu} />
                     </motion.div>
                 )}
 

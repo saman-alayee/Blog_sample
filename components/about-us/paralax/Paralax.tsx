@@ -19,6 +19,7 @@ const Parallax = () => {
         >
             <motion.h1
                 style={{ y: textY }}
+                
                 className='flex justify-center items-center font-bold text-white dark:text-black relative top-[9vh]  font-splinesans z-20 text-3xl md:text-5xl '>
                 ABOUT-US
             </motion.h1>
