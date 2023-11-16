@@ -1,9 +1,9 @@
-import Products from "@/components/product"
+import Category from "@/components/blogCategory"
 
 const Blog = () => {
   return (
     <div>
-      <Products/>
+      <Category/>
     </div>
   )
 }

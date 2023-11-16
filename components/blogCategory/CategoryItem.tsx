@@ -5,14 +5,14 @@ import Image from 'next/image'
 import styles from './Product.module.css'
 import Link from 'next/link'
 
-const ProductItem = () => {
+const CategoryItem = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ['start start', 'end start']
     })
     const boxY: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"])
-    const view = useInView(ref, { amount: 0.2 })
+    const view = useInView(ref, { amount: 0.5 })
     const parentVariant = {
         hidden: {
             opacity: 0,
@@ -25,7 +25,7 @@ const ProductItem = () => {
             }
         }
     }
-    const card: { title: string, href: string }[] = [{ title: "FrontEnd", href: '/frontEnd' }, { title: "BackEnd", href: '/backEnd' }]
+    const categoryCard: { title: string, href: string }[] = [{ title: "FrontEnd", href: '/frontEnd' }, { title: "BackEnd", href: '/backEnd' }]
     return (
         <motion.div className={styles.ProductContainer}
             variants={parentVariant}
@@ -36,7 +36,7 @@ const ProductItem = () => {
         >
             <div className={styles.cardContainer}>
                 {
-                    card.map(item =>
+                    categoryCard.map(item =>
                         <div className={styles.cardBody} key={item.href}>
                             <div className={styles.cardElements}>
                                 <Image alt='postImg' src={'/images/HERO.jpg'} width={400} height={400} className={styles.cardImg} />
@@ -60,7 +60,7 @@ const ProductItem = () => {
     )
 }
 
-export default ProductItem;
+export default CategoryItem;
 
 
 /*
