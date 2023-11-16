@@ -1,8 +1,11 @@
+import EntryForm from '@/components/login'
 import React from 'react'
 
-const Login = ({params}:{params:{entryUser:string}}) => {
+const Login = ({ params }: { params: { entryUser: string } }) => {
   return (
-    <div>{params.entryUser}</div>
+    <div>
+      <EntryForm type={params.entryUser} />
+    </div>
   )
 }
 
