@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
 import { BiSearchAlt } from 'react-icons/bi'
+import HeroSearchBar from '../UI/hero/HeroSearchBar'
 
 interface parallax {
     headerTitle: string,
@@ -26,20 +27,14 @@ const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass, searchB
             ref={ref}
             className={`w-full relative inset-0 ${containerClass}`}
         >
-            <motion.h1
+            <motion.div
                 style={{ y: textY }}
                 className={titleClass}
             >
                 <div>{headerTitle}</div>
+                {searchBar && <HeroSearchBar />}
 
-                {searchBar && <div className='md:text-xl text-sm font-semibold p-4 flex rounded-lg'>
-                    <input type="text" placeholder='search' className='text-black dark:text-white outline-none p-3 rounded-s-lg' />
-                    <div className='bg-gradient-to-tr from-blue-400 to-violet-500 hover:to-violet-600 p-2 flex justify-center items-center rounded-e-lg cursor-pointer transition-all duration-300'>
-                        <button className='md:text-2xl text-xl'><BiSearchAlt /></button>
-                    </div>
-                </div>}
-
-            </motion.h1>
+            </motion.div>
 
             <motion.div
                 id={styles.para}

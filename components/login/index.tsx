@@ -5,32 +5,37 @@ import Image from 'next/image'
 import Styles from './login.module.css'
 import Link from 'next/link'
 
-type FormValues = {
-    name: string,
-    email: string,
-    password: string
+type loginForm={
+    type:string,
+    handleSetCookie:(arg:FormValues)=>void
 }
-const EntryForm = ({ type }: { type: string }) => {
+const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { email: "", name: "", password: "", } })
-    const [flagg, setFlagg] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        reset({
-            email: "",
-            name: "",
-            password: "",
-        })
-    }, [flagg, reset])
 
     const onSubmit: SubmitHandler<FormValues> = (e) => {
-        localStorage.clear();
-        let authentication = {
+        console.log(e)
+        setLoading(true)
+        try {
+         
+          let authentication = {
             name: e.name,
             email: e.email,
             password: e.password
+          }
+          handleSetCookie(authentication)
+          reset({
+            email: "",
+            name: "",
+            password: "",
+          })
+    
+        } catch (error) {
+          console.log('some thing went wrong !')
+        } finally {
+          setLoading(false)
         }
-        localStorage.setItem('userauth', JSON.stringify(authentication))
-        setFlagg(!flagg);
     }
     return (
         <div className="w-full min-h-screen flex justify-center items-center mt-20 mb-8">
@@ -66,12 +71,12 @@ const EntryForm = ({ type }: { type: string }) => {
 
                         </div>
                         <div className='w-full flex justify-center items-center'>
-                            <button type="submit" className={Styles.formBtn}>Submit</button>
+                            <button disabled={loading} type="submit" className={Styles.formBtn}>Submit</button>
                         </div>
                     </form>
                     <div className='mt-4'>
-                        {type==="SignUp"?'you have existing account? ':'you dont have account '}
-                        <Link href={type==="SignUp"?'/login':"SignUp"} className='text-blue-600'>{type==="SignUp"?"login":"SignUp"}</Link>
+                        {type === "SignUp" ? 'you have existing account? ' : 'you dont have account '}
+                        <Link href={type === "SignUp" ? '/login' : "SignUp"} className='text-blue-600'>{type === "SignUp" ? "login" : "SignUp"}</Link>
                     </div>
                 </div>
             </div>

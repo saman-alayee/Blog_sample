@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Styles from './ContactUs.module.css'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Image from 'next/image'
+import Input from '../UI/Form/Input'
 
 type FormValues = {
   name: string,
@@ -11,25 +12,31 @@ type FormValues = {
 }
 const ContactUsForm = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { email: "", name: "", password: "", } })
-  const [flagg, setFlagg] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    reset({
-      email: "",
-      name: "",
-      password: "",
-    })
-  }, [flagg, reset])
 
-  const onSubmit: SubmitHandler<FormValues> = (e) => {
-    localStorage.clear();
-    let authentication = {
-      name: e.name,
-      email: e.email,
-      password: e.password
+  const onSubmit: SubmitHandler<FormValues> = async (e) => {
+    console.log(e)
+    setLoading(true)
+    try {
+     
+      let authentication = {
+        name: e.name,
+        email: e.email,
+        password: e.password
+      }
+      reset({
+        email: "",
+        name: "",
+        password: "",
+      })
+
+    } catch (error) {
+      console.log('some thing went wrong !')
+    } finally {
+      setLoading(false)
     }
-    localStorage.setItem('userauth', JSON.stringify(authentication))
-    setFlagg(!flagg);
+
   }
 
   return (
@@ -51,8 +58,20 @@ const ContactUsForm = () => {
             </div>
             <div className={Styles.inputField}>
               <label htmlFor="email" className={Styles.label}>Email</label>
-              <input type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}
-                {...register("email", { required: true })}
+              {/* <input type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}
+                {...register("email", { required: true  ,   pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: "Entered value does not match email format",
+                },})}
+              /> */}
+              <Input
+                type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}
+                {...register("email", {
+                  required: true, pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Entered value does not match email format",
+                  },
+                })}
               />
               {errors.email && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a email</span>}
 
@@ -66,7 +85,7 @@ const ContactUsForm = () => {
 
             </div>
             <div className='w-full flex justify-center items-center'>
-              <button type="submit" className={Styles.formBtn}>Submit</button>
+              <button disabled={loading} type="submit" className={Styles.formBtn}>Submit</button>
             </div>
           </form>
         </div>

@@ -4,7 +4,7 @@
 }
 
 :global(.dark) .mobileNav {
-  @apply bg-black/90 shadow-slate-900;
+  @apply bg-gray-900 shadow-slate-900;
 }
 
 .mobileMenuBtn {

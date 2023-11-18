@@ -1,8 +1,3 @@
-.btn{
-    @apply bg-blue-900 p-1 hover:bg-transparent rounded-lg transition-all duration-300
-}
-
-
 .formContainer {
     @apply bg-white rounded-lg shadow-2xl border flex flex-col md:flex-row w-[90vw] md:w-auto
 }

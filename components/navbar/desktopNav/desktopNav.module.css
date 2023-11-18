@@ -2,20 +2,18 @@
   @apply hidden md:block container h-20 mx-auto rounded-lg shadow-2xl border bg-white/90 transition-all duration-700;
 }
 :global(.dark) .centerNavDesktop {
-  @apply bg-zinc-950 transition-all duration-700 border border-zinc-800 shadow-2xl;
+  @apply bg-[#27374D] transition-all duration-700 border border-zinc-800 shadow-2xl;
 }
 
 .fullNavDesktop {
   @apply hidden md:block md:fixed inset-0 mx-auto origin-center w-full h-20 border-b bg-white/90;
 }
 :global(.dark) .fullNavDesktop {
-  @apply bg-black/80 border-b-zinc-800 transition-all duration-700;
+  @apply bg-[#27374D] border-b-zinc-800 transition-all duration-700;
 }
 
 .desktopNavContent {
   @apply w-full h-full flex justify-between items-center;
 }
-.searchBar {
-  @apply outline-none border focus:border-gray-800 w-[15vw] h-9 px-2 text-sm rounded-lg transition-all duration-300;
-}
+
 

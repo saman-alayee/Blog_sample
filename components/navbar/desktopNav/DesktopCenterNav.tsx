@@ -1,6 +1,6 @@
 "use client"
 import { motion } from 'framer-motion'
-import { ContentNav } from './ContentNav'
+import { ContentNav } from '@/components/UI/navBarSection/desktopSection/ContentNav'
 import styles from './desktopNav.module.css'
 
 

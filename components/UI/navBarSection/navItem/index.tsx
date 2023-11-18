@@ -1,10 +1,9 @@
 "use client"
 import Link from 'next/link'
-import styles from '../navbar.module.css'
+import styles from './navItem.module.css'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 
-const NavItem = ({toggle}:{toggle?:voidFunc}) => {
+const NavItem = ({ toggle, textSize }: { toggle?: voidFunc, textSize?: string }) => {
     const pathname = usePathname()
 
     const navItem: navItem[] = [
@@ -17,8 +16,8 @@ const NavItem = ({toggle}:{toggle?:voidFunc}) => {
         <ul className={styles.navContainer}>
             {navItem.map(item =>
                 <div key={item.navItem} className='mx-auto'>
-                    <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`} onClick={()=>typeof toggle!='undefined'?toggle():""}>
-                        <Link href={item.link} className='hover:text-blue-500'>{item.navItem}</Link>
+                    <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`} onClick={() => typeof toggle != 'undefined' ? toggle() : ""}>
+                        <Link href={item.link} className={`${textSize} hover:text-blue-500`}>{item.navItem}</Link>
                     </li>
                 </div>
             )}

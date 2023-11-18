@@ -1,0 +1,19 @@
+.btn {
+  @apply bg-blue-500 bg-opacity-60 p-1 hover:bg-transparent rounded-lg transition-all duration-300;
+}
+:global(.dark) .btn{
+  @apply bg-blue-800 bg-opacity-60 hover:bg-transparent;
+}
+.loginContainer {
+  @apply bg-gradient-to-tr from-blue-400 to-violet-500  text-white p-2 md:text-lg text-sm;
+}
+:global(.dark) .loginContainer {
+  @apply from-blue-800 to-violet-800 text-black;
+}
+
+.SignUpContainer {
+  @apply bg-gradient-to-tl from-blue-400 to-violet-500 dark:from-blue-800 dark:to-violet-800 dark:text-black rounded-e-lg text-white p-2 md:text-lg text-sm;
+}
+:global(.dark) .SignUpContainer {
+  @apply from-blue-800 to-violet-800 text-black;
+}

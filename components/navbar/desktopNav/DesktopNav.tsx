@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
-import { DesktopFullNav } from './DesktopFullNav'
-import DesktopCenterNav from './DesktopCenterNav'
+import { DesktopFullNav } from '@/components/navbar/desktopNav/DesktopFullNav'
+import DesktopCenterNav from '@/components/navbar/desktopNav/DesktopCenterNav'
 import { usePathname } from 'next/navigation'
 
 const DesktopNav = () => {

@@ -1,8 +1,8 @@
-import styles from './desktopNav.module.css'
-import { ThemeSwitcher } from "@/components/navbar/themeSwitch"
-import BlogLogo from "../blogLogo"
+import styles from './content.module.css'
+import { ThemeSwitcher } from "@/components/UI/navBarSection/themeSwitch"
+import BlogLogo from "@/components/UI/navBarSection/blogLogo"
 import NavItem from "../navItem"
-import { DesktopSearchBtn } from "@/components/navbar/searchBtn"
+import { DesktopSearchBtn } from "@/components/UI/navBarSection/searchBtn"
 import LoginBtn from '@/components/login/LoginBtn'
 
 export const ContentNav = () => {
@@ -11,7 +11,7 @@ export const ContentNav = () => {
             <div>
                 <BlogLogo />
             </div>
-            <div>
+            <div className='flex'>
                 <NavItem />
             </div>
             <div className='flex space-x-1'>

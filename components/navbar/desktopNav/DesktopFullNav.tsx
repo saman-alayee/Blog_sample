@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { ContentNav } from "./ContentNav"
+import { ContentNav } from "@/components/UI/navBarSection/desktopSection/ContentNav"
 import styles from './desktopNav.module.css'
 
 export const DesktopFullNav = () => {
@@ -8,7 +8,7 @@ export const DesktopFullNav = () => {
         initial: {
             opacity: 0,
             y: -5,
-            width:"72rem"
+            width:"60rem"
         },
         animate: {
             opacity: 1,

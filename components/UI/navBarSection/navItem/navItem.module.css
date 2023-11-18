@@ -1,0 +1,14 @@
+.navContainer {
+  @apply flex flex-col md:flex-row gap-4 text-lg md:mr-[2vw] mt-[20vh] md:mt-0;
+}
+.navItem {
+    @apply hover:text-blue-500 text-black transition-all duration-300 mx-auto md:mx-0 font-semibold p-0;
+  }
+  :global(.dark) .navItem {
+    @apply text-white hover:text-blue-500 transition-all duration-700;
+  }
+  
+  .activeNavItem {
+    @apply text-blue-500 font-bold transition-all duration-300 mx-auto md:mx-0;
+  }
+  

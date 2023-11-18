@@ -1,23 +1,24 @@
-import React from 'react'
-import styles from './login.module.css'
-import Link from 'next/link'
+"use client"
+import { useState } from 'react'
+import LoginButton from '../UI/Button/LoginButton'
+import SignUpButton from '../UI/Button/SignUpButton'
 const LoginBtn = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+  const MOBILE_THRESHOLD: number = 768
+
+  function updateSize() {
+    setIsMobile(window.innerWidth < MOBILE_THRESHOLD);
+  }
+  if (typeof window !== 'undefined') {
+  window.addEventListener('resize', updateSize);
+  }
+
   return (
     <>
-      <div className='hidden md:flex'>
-        <Link href={'/login'} className='bg-gradient-to-tr from-blue-400 to-violet-500 rounded-s-lg text-white p-1 md:text-lg text-sm'>
-          <button className={styles.btn}> Login</button>
-        </Link>
-        <Link href={'/SignUp'} className='bg-gradient-to-tl from-blue-400 to-violet-500 rounded-e-lg text-white p-1 md:text-lg text-sm'>
-          <button className={styles.btn}> SignUp</button>
-        </Link>
-      </div>
-      {/* mobile login button */}
-      <div className='md:hidden'>
-        <Link href={'/login'} className='bg-gradient-to-tr from-blue-400 to-violet-500 rounded-lg text-white p-1 md:text-lg text-sm'>
-          <button className={styles.btn}> Login</button>
-        </Link>
-      </div>
+      {isMobile
+        ? <LoginButton rounded={'rounded-lg'} />
+        : <div className='-space-x-2'> <LoginButton rounded={'rounded-s-lg'} /> <SignUpButton /></div>
+      }
     </>
   )
 }
