@@ -20,7 +20,7 @@ export default function RootLayout({
   const pathname = usePathname()
   return (
     <html lang="en">
-      <body className="w-full min-h-screen dark:bg-[#526D82] bg-white font-splinesans">
+      <body className="w-full min-h-screen dark:bg-[#040D12] bg-white font-splinesans">
         <Providers>
           <NextThemeProvider>
             <nav className='w-full absolute top-8 z-40'>

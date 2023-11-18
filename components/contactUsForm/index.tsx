@@ -8,10 +8,10 @@ import Input from '../UI/Form/Input'
 type FormValues = {
   name: string,
   email: string,
-  password: string
+  message: string
 }
 const ContactUsForm = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { email: "", name: "", password: "", } })
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { email: "", name: "", message: "", } })
   const [loading, setLoading] = useState(false)
 
 
@@ -19,16 +19,16 @@ const ContactUsForm = () => {
     console.log(e)
     setLoading(true)
     try {
-     
+
       let authentication = {
         name: e.name,
         email: e.email,
-        password: e.password
+        password: e.message
       }
       reset({
         email: "",
         name: "",
-        password: "",
+        message: "",
       })
 
     } catch (error) {
@@ -41,7 +41,7 @@ const ContactUsForm = () => {
 
   return (
     <div className="w-full min-h-screen flex justify-center items-center mt-20 mb-8">
-      <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-b from-slate-200 to-slate-500'>
+      <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-b from-gray-500 to-gray-300 dark:from-gray-800 dark:to-gray-500'>
         <div className='flex md:justify-center items-center'>
           <Image src={'/images/HERO.jpg'} alt='form-pic' width={500} height={500} className=' rounded-lg hover:scale-110 transition-all duration-300' />
         </div>
@@ -58,30 +58,21 @@ const ContactUsForm = () => {
             </div>
             <div className={Styles.inputField}>
               <label htmlFor="email" className={Styles.label}>Email</label>
-              {/* <input type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}
-                {...register("email", { required: true  ,   pattern: {
-                  value: /\S+@\S+\.\S+/,
-                  message: "Entered value does not match email format",
-                },})}
-              /> */}
-              <Input
+              <input
                 type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}
                 {...register("email", {
-                  required: true, pattern: {
-                    value: /\S+@\S+\.\S+/,
-                    message: "Entered value does not match email format",
-                  },
+                  required: true
                 })}
               />
               {errors.email && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a email</span>}
 
             </div>
             <div className={Styles.inputField}>
-              <label htmlFor="password" className={Styles.label}>message</label>
-              <textarea id="password" placeholder='enter message' className={Styles.formInput}
-                {...register("password", { required: true })}
+              <label htmlFor="message" className={Styles.label}>message</label>
+              <textarea id="message" placeholder='enter message' className={Styles.formInput}
+                {...register("message", { required: true })}
               />
-              {errors.password && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a password</span>}
+              {errors.message && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a password</span>}
 
             </div>
             <div className='w-full flex justify-center items-center'>

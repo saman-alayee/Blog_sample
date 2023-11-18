@@ -8,7 +8,7 @@
 }
 
 .mobileMenuBtn {
-  @apply flex justify-center items-center rounded-md w-8 h-8 z-40 bg-[#212933] text-white;
+  @apply flex justify-center items-center rounded-md w-8 h-8 z-40 bg-[#212933] text-white hover:scale-110;
 }
 
 :global(.dark) .mobileMenuBtn {

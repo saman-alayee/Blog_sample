@@ -2,14 +2,19 @@
 import BlogLogo from '../UI/navBarSection/blogLogo'
 import NavItem from '@/components/UI/navBarSection/navItem'
 import SocialIcons from './SocialIcons'
+import { ThemeSwitcher } from '../UI/navBarSection/themeSwitch'
 const Footer = () => {
   return (
-    <div className='w-full flex flex-col justify-center md:items-center md:flex-row  md:justify-around space-y-6 md:space-y-0 mt-[6vh] md:mt-0'>
-      <div className='flex justify-center items-center w-28 h-28'>
-      <BlogLogo />
+    <div className='w-full flex flex-col justify-center md:items-center md:flex-row  md:justify-around space-y-4 p-4 md:space-y-0'>
+      <div className='order-1 flex justify-center items-center w-28 h-12 mx-auto md:mx-0'>
+        <BlogLogo />
+      </div >
+      <div className='order-3 md:order-2'>
+        <SocialIcons />
       </div>
-      <NavItem textSize={'text-sm'}/>
-      <SocialIcons />
+      <div className='order-2 md:order-3'>
+        <ThemeSwitcher />
+      </div>
     </div>
   )
 }

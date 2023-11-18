@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Image from 'next/image'
 import Styles from './login.module.css'
@@ -7,15 +7,14 @@ import Link from 'next/link'
 
 type loginForm={
     type:string,
-    handleSetCookie:(arg:FormValues)=>void
+    handleSetCookie:(arg:loginFormValues)=>void
 }
 const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { email: "", name: "", password: "", } })
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<loginFormValues>({ defaultValues: { email: "", name: "", password: "", } })
     const [loading, setLoading] = useState(false)
 
 
-    const onSubmit: SubmitHandler<FormValues> = (e) => {
-        console.log(e)
+    const onSubmit: SubmitHandler<loginFormValues> = (e) => {
         setLoading(true)
         try {
          
@@ -39,7 +38,7 @@ const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
     }
     return (
         <div className="w-full min-h-screen flex justify-center items-center mt-20 mb-8">
-            <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-tr from-blue-400 to-violet-400'>
+            <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-bl from-gray-500 to-gray-300 dark:from-gray-800 dark:to-gray-500'>
                 <div className='flex md:justify-center items-center'>
                     <Image src={'/images/HERO.jpg'} alt='form-pic' width={500} height={500} className=' rounded-lg hover:scale-110 transition-all duration-300' />
                 </div>

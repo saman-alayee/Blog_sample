@@ -1,17 +1,29 @@
 "use client";
 import { useTheme } from "next-themes";
-import { BsMoon } from "react-icons/bs";
-import { BiSun } from "react-icons/bi";
+import { BiMoon, BiSun } from "react-icons/bi";
+import styles from './theme.module.css'
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
-
+  //{
+  //theme === "light" ?
+  console.log(theme);
+  
   return (
-    <button
-      className={`flex justify-center items-center w-8 h-8 md:w-9 md:h-9 md:text-xl rounded-md hover:scale-110 active:scale-100 duration-200 dark:bg-slate-200 dark:text-black bg-[#212933] text-white`}
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
-      {theme === "light" ? <BiSun /> : <BsMoon />}
-    </button>
+    <div className="w-[4.5rem] mx-auto flex justify-between p-1 rounded-full space-x-1 border border-black dark:border-white">
+      <button
+        className={theme==='light'?`${styles.activeThemeBtn}`:`${styles.switchThemeBtn}`}
+        onClick={() => setTheme("light")}
+      >
+        <BiSun />
+      </button>
+      <button
+        className={theme==='dark'?`${styles.activeThemeBtn}`:`${styles.switchThemeBtn}`}
+        onClick={() => setTheme("dark")}
+      >
+        <BiMoon />
+      </button>
+    </div>
+
   );
-};
+}

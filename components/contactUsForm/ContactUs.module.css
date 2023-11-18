@@ -21,9 +21,12 @@
     @apply md:w-[25vw] w-[100%] p-3 md:text-lg text-sm rounded-lg border border-[#ccc] 
 }
 :global(.dark) .formInput {
-    @apply text-white bg-black/90;
+    @apply text-white bg-black/60;
   }
 .formBtn {
     @apply md:w-[25vw] w-[80%] py-2 mt-3 bg-blue-400 text-white mx-auto text-lg border-none rounded-xl cursor-pointer hover:bg-blue-500
 }
+:global(.dark) .formBtn {
+    @apply bg-blue-600 hover:bg-blue-700;
+  }
 

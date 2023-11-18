@@ -21,9 +21,6 @@ export const ContentNav = () => {
             <div>
                 <LoginBtn />
             </div>
-            <div>
-                <ThemeSwitcher />
-            </div>
         </div>
     )
 }

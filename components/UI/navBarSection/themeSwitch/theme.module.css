@@ -1,0 +1,6 @@
+.switchThemeBtn{
+    @apply flex justify-center items-center w-7 h-7 rounded-full hover:scale-110 active:scale-100 duration-200 text-slate-700 hover:text-slate-950 hover:bg-gray-500
+}
+.activeThemeBtn{
+    @apply flex justify-center items-center w-7 h-7 rounded-full duration-200 text-slate-950 bg-gray-500
+}

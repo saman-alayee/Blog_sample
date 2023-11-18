@@ -17,7 +17,7 @@ type blogCard = {
   icon: React.JSX.Element,
   bgGradiant: string
 }
-type FormValues = {
+type loginFormValues = {
   name: string,
   email: string,
   password: string

@@ -5,7 +5,7 @@ import styles from './mobileNav.module.css'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BiSearchAlt } from 'react-icons/bi'
 import { ThemeSwitcher } from '@/components/UI/navBarSection/themeSwitch'
-import { MobileSearchBtn } from '@/components/UI/navBarSection/searchBtn'
+import { DesktopSearchBtn, MobileSearchBtn } from '@/components/UI/navBarSection/searchBtn'
 import NavItem from '@/components/UI/navBarSection/navItem'
 import BlogLogo from '../../UI/navBarSection/blogLogo'
 import LoginBtn from '@/components/login/LoginBtn'
@@ -41,16 +41,18 @@ const MobileNav = () => {
     return (
         <>
             <div id='mobileNavBar' className={styles.mobileNav}>
-                <div className='w-1/3 flex justify-start'>
+                <div className='w-20 flex justify-start items-center'>
                     <BlogLogo />
                 </div>
-
-                <div className='w-1/3 flex justify-center items-center space-x-2'>
-                    <MobileSearchBtn openSearch={openSearch} />
-                    <LoginBtn/>
+                <div className='flex'>
+                    <DesktopSearchBtn />
+                    <input placeholder='search' className='outline-none border focus:border-gray-800 w-[20vw] h-9 px-2 text-sm rounded-lg transition-all duration-300' />
                 </div>
-                <div className='w-1/3 flex justify-end space-x-2'>
-                    <ThemeSwitcher />
+                <div className='flex justify-end items-center space-x-2'>
+                    <div className='h-7'>
+                        <LoginBtn />
+
+                    </div>
                     {mobileMenuToggle === false && <button onClick={() => openMobileMenu()} className={styles.mobileMenuBtn}><AiOutlineMenu /></button>}
                 </div>
             </div>

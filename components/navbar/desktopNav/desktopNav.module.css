@@ -2,14 +2,14 @@
   @apply hidden md:block container h-20 mx-auto rounded-lg shadow-2xl border bg-white/90 transition-all duration-700;
 }
 :global(.dark) .centerNavDesktop {
-  @apply bg-[#27374D] transition-all duration-700 border border-zinc-800 shadow-2xl;
+  @apply bg-[#040D12]/70 transition-all duration-700 border border-zinc-800 shadow-2xl;
 }
 
 .fullNavDesktop {
   @apply hidden md:block md:fixed inset-0 mx-auto origin-center w-full h-20 border-b bg-white/90;
 }
 :global(.dark) .fullNavDesktop {
-  @apply bg-[#27374D] border-b-zinc-800 transition-all duration-700;
+  @apply bg-[#040D12]/70 border-b-zinc-800 transition-all duration-700;
 }
 
 .desktopNavContent {
