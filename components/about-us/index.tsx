@@ -8,7 +8,7 @@ const AboutUs = () => {
   const imgClass:string='absolute inset-0 z-0 blur-[10px] min-h-screen'
   
   return (
-    <div className='w-full h-[120vh]  overflow-hidden relative grid place-items-center'>
+    <div className='w-full h-[120vh] overflow-hidden relative grid place-items-center'>
       <ParallaxBg headerTitle={'ABOUT-US'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass}/>
       <div className='absolute z-20'>
         <Features />

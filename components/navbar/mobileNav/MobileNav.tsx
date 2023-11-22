@@ -4,11 +4,11 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import styles from './mobileNav.module.css'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BiSearchAlt } from 'react-icons/bi'
-import { ThemeSwitcher } from '@/components/UI/navBarSection/themeSwitch'
+import { ThemeSwitcher } from '@/components/UI/themeSwitch'
 import { DesktopSearchBtn, MobileSearchBtn } from '@/components/UI/navBarSection/searchBtn'
 import NavItem from '@/components/UI/navBarSection/navItem'
-import BlogLogo from '../../UI/navBarSection/blogLogo'
-import LoginBtn from '@/components/login/LoginBtn'
+import BlogLogo from '../../UI/blogLogo'
+import LoginBtn from '@/components/UI/navBarSection/entryUserButtons'
 
 
 const MobileNav = () => {

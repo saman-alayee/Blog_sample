@@ -1,6 +1,6 @@
 import AboutUs from '@/components/about-us';
 import Products from '@/components/blogCategory';
-import Hero from '@/components/hero/Hero';
+import Hero from '@/components/hero';
 export default function Page() {
   return (
     <div>

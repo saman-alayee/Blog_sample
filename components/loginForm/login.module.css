@@ -14,7 +14,7 @@
 }
 
 .label {
-   @apply md:text-lg text-sm m-2
+   @apply md:text-lg text-sm mt-2
 }
 
 .formInput {

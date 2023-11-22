@@ -1,16 +1,20 @@
 'use client'
-import EntryForm from '@/components/login'
+import EntryForm from '@/components/loginForm'
+import ParallaxBg from '@/components/paralaxBg/ParallaxBg'
 import React from 'react'
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Login({ params }: { params: { entryUser: string } }) {
-  const userDetails:(arg:FormValues)=>void=(arg)=>{
-    console.log('hello from [entryuser]');
-    console.log(arg);
-  }
+
+  const containerClass: string = 'min-h-screen overflow-hidden grid place-items-center'
+  const titleClass: string = 'flex flex-col justify-center items-center font-bold text-white dark:text-black relative font-splinesans z-20 text-7xl md:text-9xl'
+  const imgClass: string = 'absolute inset-0 z-0 grayscale-[50%]'
   return (
-    <div>
-      <EntryForm type={params.entryUser} handleSetCookie={userDetails}/>
+    <div className="w-full min-h-screen grid place-items-center">
+      <ParallaxBg containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} />
+      <div className="absolute z-10">
+        <EntryForm type={params.entryUser} />
+      </div>
     </div>
   )
 }

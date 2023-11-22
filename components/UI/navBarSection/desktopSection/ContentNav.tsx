@@ -1,13 +1,12 @@
 import styles from './content.module.css'
-import { ThemeSwitcher } from "@/components/UI/navBarSection/themeSwitch"
-import BlogLogo from "@/components/UI/navBarSection/blogLogo"
+import BlogLogo from "@/components/UI/blogLogo"
 import NavItem from "../navItem"
 import { DesktopSearchBtn } from "@/components/UI/navBarSection/searchBtn"
-import LoginBtn from '@/components/login/LoginBtn'
+import LoginBtn from '@/components/UI/navBarSection/entryUserButtons'
 
 export const ContentNav = () => {
     return (
-        <div id='navbar' className='w-full h-full flex justify-around items-center'>
+        <div id='navbar' className='w-full h-full flex justify-between items-center px-6'>
             <div>
                 <BlogLogo />
             </div>

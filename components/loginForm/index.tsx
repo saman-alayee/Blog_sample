@@ -5,11 +5,11 @@ import Image from 'next/image'
 import Styles from './login.module.css'
 import Link from 'next/link'
 
-type loginForm={
-    type:string,
-    handleSetCookie:(arg:loginFormValues)=>void
+type loginForm = {
+    type: string,
+    handleSetCookie?: (arg: loginFormValues) => void
 }
-const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
+const EntryForm = ({ type, handleSetCookie }: loginForm) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<loginFormValues>({ defaultValues: { email: "", name: "", password: "", } })
     const [loading, setLoading] = useState(false)
 
@@ -17,31 +17,28 @@ const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
     const onSubmit: SubmitHandler<loginFormValues> = (e) => {
         setLoading(true)
         try {
-         
-          let authentication = {
-            name: e.name,
-            email: e.email,
-            password: e.password
-          }
-          handleSetCookie(authentication)
-          reset({
-            email: "",
-            name: "",
-            password: "",
-          })
-    
+
+            let authentication = {
+                name: e.name,
+                email: e.email,
+                password: e.password
+            }
+            reset({
+                email: "",
+                name: "",
+                password: "",
+            })
+
         } catch (error) {
-          console.log('some thing went wrong !')
+            console.log('some thing went wrong !')
         } finally {
-          setLoading(false)
+            setLoading(false)
         }
     }
     return (
-        <div className="w-full min-h-screen flex justify-center items-center mt-20 mb-8">
-            <div className='flex flex-col md:flex-row items-center rounded-lg p-8 bg-gradient-to-bl from-gray-500 to-gray-300 dark:from-gray-800 dark:to-gray-500'>
-                <div className='flex md:justify-center items-center'>
-                    <Image src={'/images/HERO.jpg'} alt='form-pic' width={500} height={500} className=' rounded-lg hover:scale-110 transition-all duration-300' />
-                </div>
+        <div className="w-full min-h-screen flex justify-center items-center">
+            <div className='flex items-center rounded-lg p-8 bg-gradient-to-bl from-gray-500 to-gray-300 dark:from-gray-800 dark:to-gray-500'>
+
 
                 <div className='flex flex-col justify-center items-center'>
                     <h1 className={Styles.title}>{type}</h1>
@@ -52,7 +49,8 @@ const EntryForm = ({ type ,handleSetCookie}: loginForm) => {
                                 {...register("name", { required: true })}
                             />
                             {errors.name && <span className='text-red-600 ml-2 mt-2 text-xs'>please inter a name</span>}
-                        </div>}
+                        </div>
+                        }
                         <div className={Styles.inputField}>
                             <label htmlFor="email" className={Styles.label}>Email</label>
                             <input type="email" id="email" placeholder='amir.962@yahoo.com' className={Styles.formInput}

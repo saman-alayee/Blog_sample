@@ -7,7 +7,7 @@
 
 
 .SignUpContainer {
-  @apply  from-gray-300 to-gray-500 text-white p-2 text-sm;
+  @apply  from-gray-300 to-gray-500 text-white md:p-2 p-1 text-sm;
 }
 :global(.dark) .SignUpContainer {
   @apply from-gray-500 to-gray-800;

@@ -1,5 +1,6 @@
 
 import ContactUsForm from "@/components/contactUsForm"
+import ParallaxBg from "@/components/paralaxBg/ParallaxBg"
 import { cookies } from 'next/headers'
 const ContactUs = () => {
   //const cookieStore = cookies()
@@ -7,10 +8,10 @@ const ContactUs = () => {
   //   cookieStore.delete('userauth')
   //   cookieStore.set('userauth', JSON.stringify(data))
   // }
+
+
   return (
-    <>
-      <ContactUsForm />
-    </>
+        <ContactUsForm />
   )
 }
 
