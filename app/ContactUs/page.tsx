@@ -1,6 +1,4 @@
-
 import ContactUsForm from "@/components/contactUsForm"
-import ParallaxBg from "@/components/paralaxBg/ParallaxBg"
 import { cookies } from 'next/headers'
 const ContactUs = () => {
   //const cookieStore = cookies()

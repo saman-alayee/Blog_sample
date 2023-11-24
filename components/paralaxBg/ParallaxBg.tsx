@@ -2,8 +2,6 @@
 import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
-import { BiSearchAlt } from 'react-icons/bi'
-import HeroSearchBar from '../UI/hero/HeroSearchBar'
 import HeroContent from '../hero/HeroContent'
 
 interface parallax {
