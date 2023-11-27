@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
-import HeroContent from '../hero/HeroContent'
+import HeroSearchBar from '../UI/hero/HeroSearchBar'
 
 interface parallax {
     headerTitle?: string,
@@ -60,7 +60,7 @@ const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass, searchB
 
                 </motion.div>
                 <div>
-                    {searchBar && <HeroContent />}
+                    {searchBar && <HeroSearchBar />}
                 </div>
 
             </motion.div>

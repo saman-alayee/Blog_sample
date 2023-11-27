@@ -13,16 +13,34 @@ const Features = () => {
     const view = useInView(ref, { amount: 0.5 })
     const parentVariant = {
         hidden: {
-            opacity:0,
+            opacity: 0,
         },
         show: {
-            opacity:1,
-            transition:{
-                duration:0.75,
-                when:"beforeChildren"
+            opacity: 1,
+            transition: {
+                duration: 0.75,
+                when: "beforeChildren"
             }
         }
     }
+    const titleVariant = {
+        initial: {},
+        animate: {
+            transition: {
+                staggerChildren: 0.02
+            }
+        }
+    }
+    const letterVariant = {
+        initial: {
+            opacity: 0,
+        },
+        animate: {
+            opacity: 1,
+        }
+    }
+    const title: string = 'The purpose of establishing this site'
+    const message: string = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repudiandae illum error. Aperiam explicabo sint eaque vitae similique doloremque qui. Amet consequatur voluptates modi, sunt at officiis hic impedit nulla.'
     return (
         <motion.div className={styles.featuresContainer}
             variants={parentVariant}
@@ -33,8 +51,15 @@ const Features = () => {
         >
 
             <motion.div className={styles.textArea} variants={parentVariant} animate="show">
-                <h1 className={styles.textAreaHeader}>The purpose of establishing this site</h1>
-                <div className={styles.textAreaBody}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto repudiandae illum error. Aperiam explicabo sint eaque vitae similique doloremque qui. Amet consequatur voluptates modi, sunt at officiis hic impedit nulla.</div>
+                <motion.h1 className={styles.textAreaHeader} variants={titleVariant} initial='initial' whileInView='animate'>
+                    {title?.split('').map((item, index) =>
+                        <motion.span variants={letterVariant} key={index}>{item}</motion.span>
+                    )}                    </motion.h1>
+                <motion.div variants={titleVariant} initial='initial' whileInView='animate'>
+                    {message?.split('').map((item, index) =>
+                        <motion.span variants={letterVariant} key={index}>{item}</motion.span>
+                    )}
+                </motion.div>
             </motion.div>
 
             <motion.div className={styles.featuresImage} variants={parentVariant} animate="show">
