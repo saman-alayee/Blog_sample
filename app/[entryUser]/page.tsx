@@ -11,7 +11,7 @@ export default async function Login({ params }: { params: { entryUser: string } 
   const imgClass: string = 'absolute inset-0 z-0 grayscale-[50%]'
   return (
     <div className="w-full min-h-screen grid place-items-center">
-      <ParallaxBg containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} />
+      <ParallaxBg headerTitle='' imageSrc={'/images/loginbg.webp'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} />
       <div className="absolute z-10">
         <EntryForm type={params.entryUser} />
       </div>

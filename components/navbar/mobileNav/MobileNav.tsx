@@ -69,23 +69,6 @@ const MobileNav = () => {
                         <NavItem toggle={openMobileMenu} />
                     </motion.div>
                 )}
-
-                {searchBar && (
-                    <motion.div
-                        className={styles.seachPage}
-                        variants={menuVar}
-                        initial='initial'
-                        animate='animate'
-                        exit='exit'
-                    >
-                        <div className='flex items-center justify-center mt-24'><input placeholder='search' autoFocus className='outline-none border focus:border-slate-800 w-48 h-10 rounded-md p-4' /></div>
-                        <div className='flex justify-center items-center m-3 p-3 space-x-4'>
-                            <button onClick={() => openSearch()} className='text-white'><AiOutlineClose /> </button>
-                            <button className='text-white'><BiSearchAlt /></button>
-                        </div>
-                    </motion.div>
-                )}
-
             </AnimatePresence>
         </>
     )

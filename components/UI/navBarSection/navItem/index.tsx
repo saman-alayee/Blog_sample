@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import styles from './navItem.module.css'
 import { usePathname } from 'next/navigation'
+import TextAnimation from '../../textAnimation/TextAnimation'
 
 const NavItem = ({ toggle }: { toggle?: voidFunc }) => {
     const pathname = usePathname()
@@ -17,7 +18,9 @@ const NavItem = ({ toggle }: { toggle?: voidFunc }) => {
             {navItem.map(item =>
                 <div key={item.navItem} className='mx-auto'>
                     <li className={`link ${pathname === item.link ? styles.activeNavItem : `group ${styles.NavItem}`}`} onClick={() => typeof toggle != 'undefined' ? toggle() : ""}>
-                        <Link href={item.link} className='hover:text-blue-500'>{item.navItem}</Link>
+                        <Link href={item.link} className='hover:text-blue-500'>                
+                        <TextAnimation title={item.navItem} staggerTime={0.07}/>
+                        </Link>
                     </li>
                 </div>
             )}

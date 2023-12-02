@@ -1,7 +1,7 @@
 .featuresContainer{
     @apply flex flex-col justify-center mx-6 py-8 px-4 space-y-8 mt-[13vh]
-    md:flex-row md:justify-between md:items-center md:w-[80vw] md:h-[80vh]
-     bg-white/40 text-black shadow-2xl shadow-gray-200 rounded-lg
+    md:flex-row md:justify-between md:items-center md:space-x-2 md:px-8 md:space-y-0
+     bg-white/40 text-black shadow-2xl rounded-lg
 }
 :global(.dark) .featuresContainer {
     @apply text-white bg-black/40 shadow-black/30  transition-all duration-700;

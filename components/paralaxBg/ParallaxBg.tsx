@@ -3,16 +3,19 @@ import React, { useRef } from 'react'
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import styles from './ParallaxBg.module.css'
 import HeroSearchBar from '../UI/hero/HeroSearchBar'
+import TextAnimation from '../UI/textAnimation/TextAnimation'
 
 interface parallax {
-    headerTitle?: string,
+    headerTitle: string,
     containerClass: string,
     titleClass: string,
     imgClass: string,
+    imageSrc:string,
     searchBar?: boolean
+
 }
 
-const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass, searchBar }: parallax) => {
+const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass,imageSrc,searchBar }: parallax) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -21,26 +24,8 @@ const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass, searchB
     const bgY: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
     const textY: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
 
-    const titleVariant = {
-        initial: {},
-        animate: {
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    }
-    const letterVariant = {
-        initial: {
-            opacity: 0,
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                type: "tween",
-            }
-        }
-    }
 
+   
     return (
         <div
             ref={ref}
@@ -50,25 +35,23 @@ const ParallaxBg = ({ headerTitle, containerClass, titleClass, imgClass, searchB
                 style={{ y: textY }}
                 className={titleClass}
             >
-                <motion.div
-                    variants={titleVariant} initial='initial' whileInView='animate'
-                >
+                {/* title animation in paralax bg */}
 
-                    {headerTitle?.split('').map((item, index) =>
-                        <motion.span variants={letterVariant} key={index}>{item}</motion.span>
-                    )}
+                <TextAnimation title={headerTitle} staggerTime={0.15}/>
 
-                </motion.div>
+
+                {/* if in hero show search bar */}
                 <div>
                     {searchBar && <HeroSearchBar />}
                 </div>
 
             </motion.div>
 
+            {/* background of content with paralax animation */}
             <motion.div
-                id={styles.para}
-                className={imgClass}
-                style={{ y: bgY }}>
+                className={`${imgClass} bg-cover bg-no-repeat bg-bottom`}
+                style={{ y: bgY,backgroundImage: `url(${imageSrc})` }}
+            >
             </motion.div>
         </div>
     )

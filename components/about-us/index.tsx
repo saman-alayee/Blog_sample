@@ -9,7 +9,7 @@ const AboutUs = () => {
   
   return (
     <div className='w-full h-[120vh] overflow-hidden relative grid place-items-center'>
-      <ParallaxBg headerTitle={'ABOUT-US'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass}/>
+      <ParallaxBg headerTitle={'ABOUT-US'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} imageSrc='/images/ABOUT-US.webp'/>
       <div className='absolute z-20'>
         <Features />
       </div>

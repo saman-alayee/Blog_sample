@@ -10,7 +10,7 @@ const Category = () => {
 
   return (
     <div className='w-full md:h-[130vh] h-[140vh] overflow-hidden relative grid place-items-center'>
-      <ParallaxBg headerTitle={'BLOG-POST'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass}/>
+      <ParallaxBg headerTitle={'BLOG-POST'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} imageSrc='/images/BLOG-CATEGORY.webp'/>
         <div className='container absolute z-20'>
           <CategoryItem />
         </div>

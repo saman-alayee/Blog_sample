@@ -7,7 +7,7 @@ const Hero = () => {
     const imgClass: string = 'absolute inset-0 z-0 grayscale-[50%]'
     return (
         <div>
-            <ParallaxBg headerTitle={'BLOG'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} searchBar={true} />
+            <ParallaxBg headerTitle={'BLOG'} containerClass={containerClass} titleClass={titleClass} imgClass={imgClass} imageSrc='/images/HERO.webp' searchBar={true} />
         </div>
     );
 };

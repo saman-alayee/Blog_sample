@@ -4,59 +4,43 @@ import { MotionValue, motion, useScroll, useTransform, useInView } from 'framer-
 import Image from 'next/image'
 import styles from './Product.module.css'
 import Link from 'next/link'
+import ShowContainer from '../UI/showContainer'
+import TextAnimation from '../UI/textAnimation/TextAnimation'
 
 const CategoryItem = () => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['start start', 'end start']
-    })
-    const boxY: MotionValue<string> = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"])
-    const view = useInView(ref, { amount: 0.4 })
-    const parentVariant = {
-        hidden: {
-            opacity: 0,
-        },
-        show: {
-            opacity: 1,
-            transition: {
-                duration: 0.75,
-                when: "beforeChildren"
-            }
-        }
-    }
-    const categoryCard: { title: string, href: string }[] = [{ title: "FrontEnd", href: '/frontEnd' }, { title: "BackEnd", href: '/backEnd' }]
+
+
+    const categoryCard: { title: string, href: string, img: string }[] = [{ title: "FrontEnd", href: '/frontEnd', img: "/images/category-img-2.webp" }, { title: "BackEnd", href: '/backEnd', img: "/images/category-img-1.webp" }]
     return (
-        <motion.div className={styles.ProductContainer}
-            variants={parentVariant}
-            initial='hidden'
-            animate={view ? 'show' : ""}
-            style={{ y: boxY }}
-            ref={ref}
-        >
-            <div className={styles.cardContainer}>
-                {
-                    categoryCard.map(item =>
-                        <div className={styles.cardBody} key={item.href}>
-                            <div className={styles.cardElements}>
-                                <Image alt='postImg' src={'/images/HERO.jpg'} width={400} height={400} className={styles.cardImg} />
-                                <h1 className={styles.cardTitle}>{item.title}</h1>
+        <ShowContainer>
+            <div className={styles.ProductContainer}
+            >
+                <div className={styles.cardContainer}>
+                    {
+                        categoryCard.map(item =>
+                            <div className={styles.cardBody} key={item.href}>
+                                <div className={styles.cardElements}>
+                                    <Image alt='postImg' src={item.img} width={400} height={400} className={styles.cardImg} />
+                                    <div className={styles.cardTitle}>
+                                        <TextAnimation title={item.title} staggerTime={0.15} />
+                                    </div>
 
-                                <Link href={`/Blog/${item.href}`}>
-                                    <motion.button
-                                        className={styles.cardBtn}>
-                                        SHOW MORE
-                                    </motion.button>
-                                </Link>
+                                    <Link href={`/Blog/${item.href}`}>
+                                        <button
+                                            className={styles.cardBtn}
+                                        >
+                                            <TextAnimation title={'SHOW MORE'} staggerTime={0.15} />
+
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
 
-                    )
-                }
-            </div>
-
-
-        </motion.div >
+                        )
+                    }
+                </div>
+            </div >
+        </ShowContainer>
     )
 }
 
