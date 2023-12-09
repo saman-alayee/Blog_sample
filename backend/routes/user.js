@@ -17,16 +17,13 @@ router.post("/", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send("user is already register");
 
-  user = new User(_.pick(req.body, ["email", "password"]));
+  user = new User(_.pick(req.body, ["email", "password", "name"]));
   // this line hashed password and repair error for duplicate key on password
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
 
   await user.save();
-  const token = user.generateAuthToken();
-  res
-    .header("x-auth-token", token)
-    .send(_.pick(user, ["_id","email"]));
+  res.send(_.pick(user, ["_id", "email","name",]));
 });
 
 router.get("/", async (req, res) => {
@@ -45,7 +42,7 @@ router.put("/:id", async (req, res) => {
   try {
     // Find the user by ID
     const user = await User.findById(req.params.id);
-    
+
     // If the user doesn't exist, return a 404 status
     if (!user) return res.status(404).send("User not found.");
 
@@ -67,7 +64,7 @@ router.put("/:id", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id).select("-password");
-    
+
     if (!user) return res.status(404).send("User not found.");
 
     res.send(user);
@@ -89,6 +86,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 module.exports = router;
