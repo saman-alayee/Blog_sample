@@ -1,20 +1,18 @@
-import { getData } from '@/lib/getallmovie'
+import LoginUser from '@/lib/LoginUser'
+import SignUpUser from '@/lib/SignUpUser'
 import React from 'react'
 
-const BlogPost =async (props: any) => {
- const movie:movie[]=await getData()
- console.log(movie);
- 
+const BlogPost = async (props: any) => {
+  const fake=await SignUpUser({email:"x@yahoo.com",password:"112233aa222"})
+  
+  
+  const login=await LoginUser({email:"aa@yahoo.com",password:"112233aa"})
+
+
+
 
   return (
-    <div>
-      {props.searchParams.Tag}
-      {
-        movie?.map(item=>
-          <div key={item.id}>{item.title}</div>
-          )
-      }
-    </div>
+    <>{JSON.stringify(fake)}</>
   )
 }
 

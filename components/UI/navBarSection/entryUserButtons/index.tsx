@@ -6,8 +6,8 @@ const LoginBtn = () => {
     <>
 
       <div className='h-full flex justify-center items-center'>
-        <EntryBtn gradiant={'bg-gradient-to-tr rounded-s-lg'} text={'LogIn'} btnHref='/login'/>
-        <EntryBtn gradiant={'bg-gradient-to-tl rounded-e-lg'} text={'SignUp'} btnHref='/SignUp'/>
+        <EntryBtn gradiant={'bg-gradient-to-tr rounded-s-lg'} text={'SignIn'} btnHref='/entryUser/Login'/>
+        <EntryBtn gradiant={'bg-gradient-to-tl rounded-e-lg'} text={'SignUp'} btnHref='/entryUser/SignUp'/>
       </div>
 
     </>
