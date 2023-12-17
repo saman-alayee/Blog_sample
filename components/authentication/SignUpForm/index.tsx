@@ -12,7 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Styles from '../login.module.css'
 import { SignUpSchema } from '@/lib/zodSchema/SignUpSchema';
 import { SignUpDataType } from '../entrySchemaTypes';
-import { SignUpUser } from './SignUpRequest';
+import { signUpUser } from '@/lib/signUp';
 
 
 
@@ -29,15 +29,11 @@ const SignUpForm = () => {
     })
     //state
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState<SignUpDataType>()
 
     //submit hadler
     const onSubmit: SubmitHandler<SignUpDataType> = async (e) => {
         setLoading(true)
-        console.log(e);
-        setData(e)
-        console.log(data);
-        const req = await SignUpUser(data as SignUpDataType)
+        const req = await signUpUser(e as SignUpDataType)
         console.log(req);
         setLoading(false)
         reset()

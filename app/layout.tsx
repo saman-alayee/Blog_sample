@@ -1,6 +1,6 @@
 "use client"
 import { Spline_Sans } from 'next/font/google'
-import { Providers } from '../providers/next-ui/providers';
+import { NextUiProviders } from '../providers/next-ui/providers';
 import '@/styles/globals.css'
 import { NextThemeProvider } from "providers/next-theme";
 import Footer from '@/components/footer';
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full min-h-screen dark:bg-[#040D12] bg-white font-splinesans">
-        <Providers>
+        <NextUiProviders>
           <NextThemeProvider>
             <nav className='w-full absolute top-8 z-40'>
               <NavBar />
@@ -35,7 +35,7 @@ export default function RootLayout({
               <Footer />
             </footer>
           </NextThemeProvider>
-        </Providers>
+        </NextUiProviders>
       </body>
     </html>
   )

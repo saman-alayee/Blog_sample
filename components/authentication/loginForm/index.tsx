@@ -9,7 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 //component and styles
 import Styles from '../login.module.css'
-import { loginUserRequest } from './LoginUser';
+import { loginUserRequest } from '../../../lib/signIn';
 import { LoginSchema } from '@/lib/zodSchema/LoginSchema';
 import { LoginDataType } from '../entrySchemaTypes';
 
@@ -17,7 +17,7 @@ import { LoginDataType } from '../entrySchemaTypes';
 
 
 const LoginForm = () => {
-    //hook form import 
+    //hook form initialize 
     const {
         register,
         handleSubmit,
@@ -28,18 +28,14 @@ const LoginForm = () => {
     })
     //state
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState<LoginDataType>()
 
     //submit hadler
     const onSubmit: SubmitHandler<LoginDataType> = async (e) => {
         setLoading(true)
-        setData(e)
-        console.log(data);
-        const req = await loginUserRequest(data as LoginDataType)
+        const req = await loginUserRequest(e as LoginDataType)
         console.log(req);
         setLoading(false)
         reset()
-
     }
     return (
         <div className="w-full min-h-screen flex justify-center items-center">
