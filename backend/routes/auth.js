@@ -7,16 +7,34 @@ const Joi = require("joi");
 router.post("/", async (req, res) => {
   try {
     const { error } = validate(req.body);
-    if (error) return res.status(400).json({ status: "error", message: error.details[0].message });
+    if (error)
+      return res
+        .status(400)
+        .json({ status: "error", message: error.details[0].message });
 
     let user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).json({ status: "error", message: "Invalid email or password" });
+    if (!user)
+      return res
+        .status(400)
+        .json({ status: "error", message: "Invalid email or password" });
 
-    const validatePassword = await bcrypt.compare(req.body.password, user.password);
-    if (!validatePassword) return res.status(400).json({ status: "error", message: "Invalid email or password" });
+    const validatePassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!validatePassword)
+      return res
+        .status(400)
+        .json({ status: "error", message: "Invalid email or password" });
 
     const accessToken = user.generateAuthToken();
-    res.json({ status: "success", token: accessToken });
+    res.json({
+      status: "success",
+      token: accessToken,
+      username: user.name,
+      id: user._id,
+      email: user.email,
+    });
   } catch (error) {
     console.error("Error during login:", error);
     res.status(500).json({ status: "error", message: "Internal Server Error" });
